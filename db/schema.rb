@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130161061) do
+ActiveRecord::Schema.define(:version => 20130130180119) do
 
   create_table "votes", :force => true do |t|
     t.integer  "votable_id"
@@ -49,8 +49,19 @@ ActiveRecord::Schema.define(:version => 20130130161061) do
   create_table "voting_app_users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "sign_in_count",        :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
+    t.string   "uid"
+    t.string   "provider"
   end
+
+  add_index "voting_app_users", ["authentication_token"], :name => "index_voting_app_users_on_authentication_token", :unique => true
+  add_index "voting_app_users", ["email"], :name => "index_voting_app_users_on_email", :unique => true
 
 end

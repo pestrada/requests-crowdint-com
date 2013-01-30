@@ -8,6 +8,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'crowdint_auth'
+gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'rabl'
