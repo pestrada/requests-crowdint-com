@@ -13,6 +13,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'rabl'
+gem 'unicorn'
 
 gem 'voting_app',
     git: 'git://github.com/crowdint/voting_engine.git'
