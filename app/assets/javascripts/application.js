@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars.runtime
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/requests_crowdint_com
 //= require_tree .

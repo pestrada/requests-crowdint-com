@@ -10,9 +10,12 @@ end
 
 gem 'crowdint_auth'
 gem 'devise'
+gem 'haml_assets'
 gem 'haml-rails'
+gem 'handlebars_assets'
 gem 'jquery-rails'
 gem 'rabl'
+gem 'rails-backbone'
 gem 'unicorn'
 
 gem 'voting_app',

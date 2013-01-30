@@ -1,1 +1,17 @@
-Hello world
+:javascript
+  var submitted = #{@submitted.to_json};
+  var accepted = #{@accepted.to_json};
+
+  App.submitted_list = new App.Collections.Submitted();
+  App.accepted_list  = new App.Collections.Accepted();
+
+  App.submitted_list.reset(submitted);
+  App.accepted_list.reset(accepted);
+
+  $(function(){
+    App.layout = new App.Views.Application();
+    App.layout.render();
+    App.application_router = new App.Routers.Application;
+    Backbone.history.start();
+  });
+
