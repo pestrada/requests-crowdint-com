@@ -9,9 +9,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rabl'
 
 gem 'voting_app',
     git: 'git://github.com/crowdint/voting_engine.git'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :production do
   gem 'pg'
