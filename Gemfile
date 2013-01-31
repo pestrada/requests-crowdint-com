@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'rabl'
 gem 'rails-backbone'
 gem 'acts_as_votable',
-    git: 'git@github.com:supherman/acts_as_votable.git',
+    git: 'git://github.com/supherman/acts_as_votable.git',
     branch: 'sti-voter'
 gem 'unicorn'
 
