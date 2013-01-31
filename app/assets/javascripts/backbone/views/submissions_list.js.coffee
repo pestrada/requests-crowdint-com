@@ -5,14 +5,18 @@ class App.Views.SubmissionsList extends Backbone.View
 
   initialize: ->
     @collection.on 'add', @addOne, @
+    @collection.on 'remove', @removeSubmission, @
 
   render: ->
     @$el.html @template
     @addAll()
 
   addAll: ->
-    @collection.each @addOne
+    @collection.each @addOne, @
 
   addOne: (submission)->
     view = new App.Views.Submitted({ model: submission })
-    view.render()
+    @$el.find('ul.list').prepend(view.render().el)
+
+  removeSubmission: (model)->
+    model.trigger('remove')

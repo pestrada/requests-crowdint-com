@@ -1,7 +1,9 @@
 class App.Views.Accepted extends Backbone.View
-  el: 'section.submission-list ul'
+  tagName: 'li'
 
   template: HandlebarsTemplates['backbone/templates/accepted']
 
   render: ->
-    @$el.append(@template(@model.toJSON()))
+    @$el.html(@template(@model.toJSON()))
+    @$el.fadeIn()
+    @

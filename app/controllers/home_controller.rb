@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def show
-    @submitted = VotingApp::Submission.submitted
-    @accepted  = VotingApp::Submission.accepted
+    @submitted = Submission.submitted
+    @accepted  = Submission.accepted
   end
 end

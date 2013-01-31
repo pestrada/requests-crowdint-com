@@ -1,6 +1,6 @@
 :javascript
-  var submitted = #{@submitted.to_json};
-  var accepted = #{@accepted.to_json};
+  var submitted = #{Rabl::Renderer.json(@submitted, 'home/submissions', :view_path => 'app/views')};
+  var accepted = #{Rabl::Renderer.json(@accepted, 'home/submissions', :view_path => 'app/views')};
 
   App.submitted_list = new App.Collections.Submitted();
   App.accepted_list  = new App.Collections.Accepted();

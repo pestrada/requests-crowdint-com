@@ -1,1 +1,4 @@
-%li {{ this.description }}
+{{ this.description }}
+%span
+  .votes {{ this.votes }}
+  = link_to 'Up vote', '#', class: 'like'

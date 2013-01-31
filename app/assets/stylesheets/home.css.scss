@@ -1,12 +1,16 @@
+#logo{
+  background: url(/assets/logo.png) no-repeat;
+  display: inline-block;
+  float: left;
+  height: 67px;
+  width: 156px;
+}
 header{
   overflow:hidden;
   ul{
     float:right;
     li{
       float:left;
-      &:nth-child(2n){
-        
-      }
       a{
         padding:1em;
         display:inline-block;

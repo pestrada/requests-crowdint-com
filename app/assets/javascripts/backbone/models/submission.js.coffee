@@ -5,6 +5,14 @@ class App.Models.Submission extends Backbone.Model
     if @get('description') is ''
       return 'Validation Error'
 
+  like: ->
+    $.ajax
+      type: 'POST'
+      url: "/api/submissions/#{@id}/votes"
+      success: (data, status, xhr)=>
+        @set({ votes: data.votes })
+        @trigger('accepted') if data.votes >= 1
+
 
 class App.Collections.Submitted extends Backbone.Collection
   model: App.Models.Submission

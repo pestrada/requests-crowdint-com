@@ -4,7 +4,8 @@ class App.Views.NewSubmission extends Backbone.View
   template: HandlebarsTemplates['backbone/templates/new_submission']
 
   events:
-    'click #add_new_submission': 'add_new_submission'
+    'click #add_new_submission': 'add_new_submission_on_click'
+    'keyup #new_submission' : 'add_new_submission_on_enter'
 
   render: ->
     @$el.html(@template)
@@ -15,9 +16,17 @@ class App.Views.NewSubmission extends Backbone.View
   hide: ->
     @$el.hide()
 
-  add_new_submission: (e)->
+  add_new_submission_on_click: (e)->
     e.preventDefault()
+    @add_new_submission()
+
+  add_new_submission_on_enter: (e)->
+    e.preventDefault()
+    if e.keyCode is 13
+      @add_new_submission()
+
+  add_new_submission: (description)->
     textarea = @$el.find('#new_submission')
     description = textarea.val()
-    @collection.create { description: description }
     textarea.val('')
+    @collection.create { description: description }
