@@ -20,7 +20,8 @@ class App.Views.Submitted extends Backbone.View
     @$el.fadeIn()
     @
 
-  like: ->
+  like: (e)->
+    e.preventDefault()
     @model.like()
 
   updateVotes: (model)->
