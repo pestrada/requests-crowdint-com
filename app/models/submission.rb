@@ -6,7 +6,4 @@ class Submission < VotingApp::Submission
     super methods: [:cached_votes_total]
   end
 
-  def class
-    VotingApp::Submission
-  end
 end

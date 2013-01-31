@@ -3,8 +3,5 @@ class User < VotingApp::User
 
   attr_accessible :email, :provider, :uid, :authentication_token
 
-  def class
-    VotingApp::User
-  end
 end
 
