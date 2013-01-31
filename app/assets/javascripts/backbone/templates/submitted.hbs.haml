@@ -1,4 +1,4 @@
 {{ this.description }}
-%span
+.vote-controls
+  = link_to '+1', '#', class: 'like'
   .votes {{ this.votes }}
-  = link_to 'Up vote', '#', class: 'like'
