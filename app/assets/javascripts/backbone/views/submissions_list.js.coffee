@@ -25,3 +25,13 @@ class App.Views.SubmissionsList extends Backbone.View
 
   removeSubmission: (model)->
     model.trigger('remove')
+
+  initializeEndlessScrolling: ->
+    $(document).endlessScroll
+      fireOnce: false
+      fireDelay: 10000
+      ceaseFireOnEmpty: false
+      callback: (f,p,s)=>
+        @collection.nextPage()
+      ceaseFire: =>
+        @collection.isLastPage()

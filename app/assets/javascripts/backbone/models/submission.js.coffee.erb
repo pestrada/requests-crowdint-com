@@ -14,9 +14,8 @@ class App.Models.Submission extends Backbone.Model
         @trigger('accepted') if data.votes >= <%= Rails.application.config.votes_limit %>
 
 
-class App.Collections.Submitted extends Backbone.Collection
+class App.Collections.Submissions extends Backbone.Collection
   model: App.Models.Submission
-  url: '/api/submissions'
   page: 1
   last_page: false
 
@@ -33,7 +32,9 @@ class App.Collections.Submitted extends Backbone.Collection
   isLastPage: ->
     @last_page is true
 
-class App.Collections.Accepted extends Backbone.Collection
-  model: App.Models.Submission
-  url: '/api/accepted'
+class App.Collections.Submitted extends App.Collections.Submissions
+  url: '/api/submissions'
 
+
+class App.Collections.Accepted extends App.Collections.Submissions
+  url: '/api/accepted'
