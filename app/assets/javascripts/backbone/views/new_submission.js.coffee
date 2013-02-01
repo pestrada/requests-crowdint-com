@@ -29,4 +29,5 @@ class App.Views.NewSubmission extends Backbone.View
     textarea = @$el.find('#new_submission')
     description = textarea.val()
     textarea.val('')
-    @collection.create { description: description }
+    submission = @collection.create { description: description }, { silent: true }
+    @collection.trigger 'add-new', submission

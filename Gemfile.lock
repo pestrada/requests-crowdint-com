@@ -1,10 +1,11 @@
 GIT
   remote: git://github.com/crowdint/voting_engine.git
-  revision: ac3d818258394a62c633007088e1df3dce04ec6a
+  revision: 073e77011400d6e0f985b6b3e903c55032877067
   specs:
     voting_app (0.0.1)
       acts_as_votable (~> 0.5.0)
       haml-rails
+      kaminari
       rails (~> 3.2.11)
       state_machine
 
@@ -90,6 +91,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.6)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.8.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -190,6 +194,7 @@ DEPENDENCIES
   haml_assets
   handlebars_assets
   jquery-rails
+  kaminari
   pg
   rabl
   rails (= 3.2.11)

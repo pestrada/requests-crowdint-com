@@ -14,6 +14,7 @@ gem 'haml_assets'
 gem 'haml-rails'
 gem 'handlebars_assets'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'rabl'
 gem 'rails-backbone'
 gem 'acts_as_votable',

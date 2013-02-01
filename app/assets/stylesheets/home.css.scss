@@ -80,7 +80,6 @@ header{
   position:relative;
   top:1px;
 }
-
  .vote-controls{
    float:right;
    .votes{
@@ -91,4 +90,7 @@ header{
      margin-top:8px;
      text-align:center;
    }
+ }
+ .loading{
+   text-align:center;
  }
