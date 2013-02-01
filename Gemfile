@@ -28,6 +28,7 @@ gem 'voting_app',
 group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'poltergeist'
   gem 'sqlite3'
 end
 

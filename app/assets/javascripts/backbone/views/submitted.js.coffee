@@ -11,6 +11,7 @@ class App.Views.Submitted extends Backbone.View
     'click .like': 'like'
 
   initialize: ->
+    @$el.addClass("submission-#{@model.id}")
     @model.on 'change:votes', @updateVotes, @
     @model.on 'accepted', @acceptSubmission, @
     @model.on 'remove', @remove, @
