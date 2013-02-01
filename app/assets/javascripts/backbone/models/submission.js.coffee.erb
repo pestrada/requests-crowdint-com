@@ -11,7 +11,7 @@ class App.Models.Submission extends Backbone.Model
       url: "/api/submissions/#{@id}/votes"
       success: (data, status, xhr)=>
         @set({ votes: data.votes })
-        @trigger('accepted') if data.votes >= 10
+        @trigger('accepted') if data.votes >= <%= Rails.application.config.votes_limit %>
 
 
 class App.Collections.Submitted extends Backbone.Collection
