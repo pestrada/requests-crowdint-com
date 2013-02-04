@@ -9,30 +9,29 @@ describe VotingApp::VotesController do
 
   describe 'POST :create' do
     let(:user) { User.create }
+    let(:submission) { Submission.create(description: 'foo') }
 
     before do
       controller.stub current_user: user
-      post :create, submission: { description: 'foo bar' }, format: :json
+      Submission.should_receive(:find).and_return submission
     end
 
-    it 'Should be able to vote ' do
-
-      expected_response = %(
-        {
-          "id": 1,
-          "description": "foo bar",
-          "created_at": "",
-          "accepted_at": null,
-          "votes": 0
-        }
-      )
-
-      expect(response.body).to be_json_eql expected_response
-      expect(response.status).to be 201
+    it 'should increment submission votes by one' do
+      expect do
+        post :create, submission_id: 1, format: :json
+      end.to change{ submission.count_votes_total }.by(1)
     end
 
-    it 'should belong to the current user' do
-      expect(Submission.last.user_id).to be user.id
+    context "When current user is the submission's owner" do
+      before do
+        submission.stub user: user
+      end
+
+      it 'should not increment submission votes' do
+        expect do
+          post :create, submission_id: 1, format: :json
+        end.to_not change{ submission.count_votes_total }.by(1)
+      end
     end
   end
 end
