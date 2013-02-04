@@ -1,5 +1,6 @@
 Given /^I am logged in$/ do
   visit google_apps_sign_in_path
+  User.first.update_column :email, 'test@example.com'
 end
 
 When /^I go to the home page$/ do
