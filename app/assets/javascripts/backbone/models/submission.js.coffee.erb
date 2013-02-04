@@ -1,6 +1,9 @@
 class App.Models.Submission extends Backbone.Model
   urlRoot: '/api/submissions'
 
+  defaults:
+    votes: 0
+
   validate: ->
     if @get('description') is ''
       return 'Validation Error'

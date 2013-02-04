@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails', "~> 2.12.2"
   gem 'sqlite3'
   gem 'json_spec'
+  gem 'pry'
 end
 
 group :production do
