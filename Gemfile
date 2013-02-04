@@ -29,7 +29,9 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'rspec-rails', "~> 2.12.2"
   gem 'sqlite3'
+  gem 'json_spec'
 end
 
 group :production do
