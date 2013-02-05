@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/crowdint/voting_engine.git
-  revision: 073e77011400d6e0f985b6b3e903c55032877067
+  revision: 34e03fe1c70ff38fb75e0839dce2fc723f818cea
   specs:
     voting_app (0.0.1)
       acts_as_votable (~> 0.5.0)
@@ -131,7 +131,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.1)
-    mime-types (1.19)
+    mime-types (1.20.1)
     multi_json (1.5.0)
     nokogiri (1.5.6)
     omniauth (1.1.1)
