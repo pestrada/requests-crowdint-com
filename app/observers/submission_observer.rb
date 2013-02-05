@@ -2,6 +2,6 @@ class SubmissionObserver < ActiveRecord::Observer
   observe VotingApp::Submission
 
   def after_create(submission)
-    EmailWorker.perform_async('new_request', 5)
+    Notifier.new_request.deliver
   end
 end
