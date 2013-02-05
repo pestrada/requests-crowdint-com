@@ -13,7 +13,7 @@ class App.Views.Submitted extends Backbone.View
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
     @model.on 'change:votes', @updateVotes, @
-    @model.on 'accepted', @acceptSubmission, @
+    @model.on 'promoted', @promoteSubmission, @
     @model.on 'remove', @remove, @
 
   render: ->
@@ -28,9 +28,9 @@ class App.Views.Submitted extends Backbone.View
   updateVotes: (model)->
     @$el.find('.votes').html(model.get('votes'))
 
-  acceptSubmission: ->
+  promoteSubmission: ->
     @model.collection.remove(@model)
-    App.accepted_list.add @model
+    App.promoted_list.add @model
 
   remove: ->
     @$el.css('background', '#C7DEA9').fadeOut(1600)

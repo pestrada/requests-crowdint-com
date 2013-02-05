@@ -1,7 +1,7 @@
 class App.Routers.Application extends Backbone.Router
   routes:
     ''         : 'showSubmissionList'
-    'accepted' : 'showAcceptedList'
+    'promoted' : 'showPromotedList'
 
   showSubmissionList: ->
     $(document).off('scroll')
@@ -10,9 +10,9 @@ class App.Routers.Application extends Backbone.Router
     App.submissions_view.initializeEndlessScrolling()
     App.form.show()
 
-  showAcceptedList: ->
+  showPromotedList: ->
     $(document).off('scroll')
     App.form.hide()
-    App.accepted_view = new App.Views.AcceptedList({ collection: App.accepted_list }) unless App.accepted_view?
-    App.accepted_view.render()
-    App.accepted_view.initializeEndlessScrolling()
+    App.promoted_view = new App.Views.PromotedList({ collection: App.promoted_list }) unless App.promoted_view?
+    App.promoted_view.render()
+    App.promoted_view.initializeEndlessScrolling()

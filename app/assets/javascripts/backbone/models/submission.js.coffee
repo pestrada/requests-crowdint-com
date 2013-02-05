@@ -14,7 +14,7 @@ class App.Models.Submission extends Backbone.Model
       url: "/api/submissions/#{@id}/votes"
       success: (data, status, xhr)=>
         @set({ votes: data.votes })
-        @trigger('accepted') if data.votes >= App.votesLimit
+        @trigger('promoted') if data.votes >= App.votesLimit
 
 
 class App.Collections.Submissions extends Backbone.Collection
@@ -39,5 +39,5 @@ class App.Collections.Submitted extends App.Collections.Submissions
   url: '/api/submissions'
 
 
-class App.Collections.Accepted extends App.Collections.Submissions
+class App.Collections.Promoted extends App.Collections.Submissions
   url: '/api/promoted'

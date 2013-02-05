@@ -1,9 +1,9 @@
-class App.Views.AcceptedList extends Backbone.View
+class App.Views.PromotedList extends Backbone.View
   el: 'section.submission-list'
 
   className: 'hidden'
 
-  template: "<ul class='accepted list'></ul>"
+  template: "<ul class='promoted list'></ul>"
 
   initialize: ->
     @collection.on 'add', @addOne, @
@@ -15,8 +15,8 @@ class App.Views.AcceptedList extends Backbone.View
   addAll: ->
     @collection.each @addOne, @
 
-  addOne: (accepted)->
-    view = new App.Views.Accepted({ model: accepted })
+  addOne: (promoted)->
+    view = new App.Views.Promoted({ model: promoted })
     @$el.find('ul.list').prepend view.render().el
 
   initializeEndlessScrolling: ->

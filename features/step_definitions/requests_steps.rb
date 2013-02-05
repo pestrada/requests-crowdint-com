@@ -7,8 +7,8 @@ When /^I go to the home page$/ do
   visit root_path
 end
 
-When /^I go to accepted page$/ do
-  visit root_path + '#accepted'
+When /^I go to promoted page$/ do
+  visit root_path + '#promoted'
 end
 
 When /^I write the request "(.*?)"$/ do |request|
@@ -25,8 +25,8 @@ Then /^I should see the request "(.*?)" in the submitted list$/ do |request|
   end
 end
 
-Then /^I should see the request "(.*?)" in the accepted list$/ do |request|
-  within '.submission-list .accepted' do
+Then /^I should see the request "(.*?)" in the promoted list$/ do |request|
+  within '.submission-list .promoted' do
     have_content request
   end
 end
@@ -35,9 +35,9 @@ Given /^a request "(.*?)" exists$/ do |description|
   Submission.create description: description
 end
 
-Given /^an accepted request "(.*?)" exists$/ do |description|
+Given /^a promoted request "(.*?)" exists$/ do |description|
   s = Submission.create description: description
-  s.accept
+  s.promote
 end
 
 When /^I up vote the request "(.*?)"$/ do |request|
