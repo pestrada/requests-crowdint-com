@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'rabl'
 gem 'rails-backbone'
+gem 'sidekiq'
 gem 'acts_as_votable',
     git: 'git://github.com/supherman/acts_as_votable.git',
     branch: 'sti-voter'
