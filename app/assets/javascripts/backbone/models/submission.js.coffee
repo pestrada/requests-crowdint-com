@@ -40,4 +40,4 @@ class App.Collections.Submitted extends App.Collections.Submissions
 
 
 class App.Collections.Accepted extends App.Collections.Submissions
-  url: '/api/accepted'
+  url: '/api/promoted'
