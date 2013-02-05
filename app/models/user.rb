@@ -3,5 +3,7 @@ class User < VotingApp::User
 
   attr_accessible :email, :provider, :uid, :authentication_token
 
+  has_many :submissions
+
 end
 

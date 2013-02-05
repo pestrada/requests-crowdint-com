@@ -8,6 +8,8 @@
   App.submitted_list.reset(submitted);
   App.accepted_list.reset(accepted);
 
+  App.votesLimit = #{Rails.application.config.votes_limit}
+
   $(function(){
     App.layout = new App.Views.Application();
     App.layout.render();
