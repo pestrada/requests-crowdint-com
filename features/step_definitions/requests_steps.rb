@@ -53,3 +53,7 @@ Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
     have_content expected_count
   end
 end
+
+Given /^a request "(.*?)" owned by me exists$/ do |description|
+  Submission.create description: description, user_id: User.first.id
+end
