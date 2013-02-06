@@ -10,7 +10,8 @@ Feature: Up vote a request
 
   Scenario: When owner
     Given I am logged in
-      And a request "foo" owned by me exists
      When I go to the home page
+      And I write the request "foo"
+      And I submit the request
       And I up vote the request "foo"
      Then The "foo" vote count should be 0

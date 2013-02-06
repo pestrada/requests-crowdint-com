@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205201024) do
+ActiveRecord::Schema.define(:version => 20130206221003) do
 
   create_table "votes", :force => true do |t|
     t.integer  "votable_id"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130205201024) do
     t.string   "authentication_token"
     t.string   "uid"
     t.string   "provider"
+    t.boolean  "admin"
   end
 
   add_index "voting_app_users", ["authentication_token"], :name => "index_voting_app_users_on_authentication_token", :unique => true
