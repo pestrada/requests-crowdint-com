@@ -11,7 +11,7 @@ class App.Models.Submission extends Backbone.Model
   like: ->
     $.ajax
       type: 'POST'
-      url: "/api/submissions/#{@id}/votes"
+      url: "/api/submissions/#{@id}/vote"
       success: (data, status, xhr)=>
         @set({ votes: data.votes })
         @trigger('promoted') if data.votes >= App.votesLimit
