@@ -24,7 +24,7 @@ echo "RVM: $(ruby --version)"
 # TODO: remove the --pre after bundler version 2.2 is released
 bundle --version || gem install bundler --pre >> /dev/null 2>&1
 
-bundle check || bundle install > /dev/null 2>&1
+bundle install > /dev/null 2>&1
 bundle exec rake db:reset --trace > $LOG_DIR/rake_reset.log 2>&1
 bundle exec rake db:test:prepare --trace > $LOG_DIR/rake_prepare.log 2>&1
 
