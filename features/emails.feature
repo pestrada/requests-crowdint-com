@@ -1,4 +1,4 @@
-@omniauth @javascript
+@omniauth @javascript @observers
 Feature: Send Emails
 
   Scenario: When a request is created
