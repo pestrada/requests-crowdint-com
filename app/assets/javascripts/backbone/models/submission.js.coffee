@@ -54,4 +54,4 @@ class App.Collections.Submitted extends App.Collections.Submissions
 
 
 class App.Collections.Promoted extends App.Collections.Submissions
-  url: '/api/promoted'
+  url: '/api/submissions?state=processed'
