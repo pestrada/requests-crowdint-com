@@ -41,11 +41,7 @@ Given /^a promoted request "(.*?)" exists$/ do |description|
 end
 
 When /^I up vote the request "(.*?)"$/ do |request|
-  request = Submission.find_by_description request
-  sleep 2
-  within ".submission-list .submissions li.submission-#{request.id}" do
-    find('.like').click
-  end
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']/a[@class='like']").click
 end
 
 Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
