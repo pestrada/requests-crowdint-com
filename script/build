@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Set default variables (if not before with ENV variables)
+if [ -z $CC_RUBY ]; then CC_RUBY=1.9.3; fi
+if [ -z $CC_GEMSET ]; then CC_GEMSET=requests fi
+
+# Logs directory
+LOG_DIR="$CC_BUILD_ARTIFACTS/tmp"
+mkdir -p $LOG_DIR
+
+# Initialize RVM
+source "$HOME/.rvm/scripts/rvm"
+
+
+
+echo -e "\n*******************************************************"
+echo "-- Project dependencies"
+
+# Change to the gemset
+rvm --create --install $CC_RUBY@$CC_GEMSET
+echo "RVM: $(ruby --version)"
+
+# Is bundler installed?
+# TODO: remove the --pre after bundler version 2.2 is released
+bundle --version || gem install bundler --pre >> /dev/null 2>&1
+
+bundle check || bundle install > /dev/null 2>&1
+bundle exec rake db:reset --trace > $LOG_DIR/rake_reset.log 2>&1
+bundle exec rake db:test:prepare --trace > $LOG_DIR/rake_prepare.log 2>&1
+
+
+echo -e "\n*******************************************************"
+echo "-- Build project"
+bundle exec rake
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -eq "0" ]; then
+
+  GIT_REMOTE=`git remote -v | egrep "heroku.*git@heroku\."`
+  # Only if Heroku remote is configured
+  if [ -n "${GIT_REMOTE}" ]; then
+
+    if [ -z $HEROKU_URL ]; then HEROKU_URL=http://requests.crowdint.com/; fi
+
+    echo -e "\n*******************************************************"
+    echo "-- Heroku deploy"
+    git push heroku master
+    wget $HEROKU_URL --no-check-certificate -O /tmp/retro.html
+    EXIT_CODE=$? # break the build if the server returns an error
+  fi
+
+fi
+
+exit $EXIT_CODE
