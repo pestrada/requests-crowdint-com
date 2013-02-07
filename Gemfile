@@ -24,7 +24,6 @@ gem 'unicorn'
 
 gem 'voting_app',
     git: 'git://github.com/crowdint/voting_engine.git'
-
 group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
