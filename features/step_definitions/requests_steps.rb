@@ -42,6 +42,7 @@ end
 
 When /^I up vote the request "(.*?)"$/ do |request|
   request = Submission.find_by_description request
+  sleep 2
   within ".submission-list .submissions li.submission-#{request.id}" do
     find('.like').click
   end
