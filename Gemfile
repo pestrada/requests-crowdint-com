@@ -29,6 +29,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'fivemat'
+  gem 'no_peeping_toms'
   gem 'poltergeist'
   gem 'rspec-rails', "~> 2.12.2"
   gem 'sqlite3'
