@@ -16,3 +16,15 @@ class App.Routers.Application extends Backbone.Router
     App.promoted_view = new App.Views.PromotedList({ collection: App.promoted_list }) unless App.promoted_view?
     App.promoted_view.render()
     App.promoted_view.initializeEndlessScrolling()
+
+
+class App.Routers.Admin extends App.Routers.Application
+  adminRoutes:
+    'admin' : 'showAdmin'
+
+  initialize: ->
+    _.extend @routes, @adminRoutes
+    @_bindRoutes()
+
+  showAdmin: ->
+    console.log 'admin'

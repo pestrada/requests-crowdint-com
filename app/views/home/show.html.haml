@@ -15,7 +15,11 @@
   $(function(){
     App.layout = new App.Views.Application();
     App.layout.render();
-    App.application_router = new App.Routers.Application;
+    if (App.isAdmin) {
+      App.application_router = new App.Routers.Admin;
+    } else {
+      App.application_router = new App.Routers.Application;
+    }
     Backbone.history.start();
   });
 
