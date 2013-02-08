@@ -16,7 +16,7 @@ When /^I write the request "(.*?)"$/ do |request|
 end
 
 When /^I submit the request$/ do
-  click_link 'Submit request'
+  click_link 'SUBMIT'
 end
 
 Then /^I should see the request "(.*?)" in the submitted list$/ do |request|
@@ -26,7 +26,7 @@ Then /^I should see the request "(.*?)" in the submitted list$/ do |request|
 end
 
 Then /^I should see the request "(.*?)" in the promoted list$/ do |request|
-  within '.submission-list .promoted' do
+  within '.promoted-list' do
     have_content request
   end
 end
