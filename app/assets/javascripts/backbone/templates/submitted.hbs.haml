@@ -7,5 +7,7 @@
   %p
     {{ this.description }}
 .vote-controls
-  .votes {{ this.votes }}
+  .votes
+    %span {{ this.votes }}
+    %span VOTES
   = link_to '+1', '#', class: 'like'

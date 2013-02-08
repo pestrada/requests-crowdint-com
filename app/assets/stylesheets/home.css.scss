@@ -34,10 +34,6 @@ header{
       background:#fff;
       overflow:hidden;
       margin-top:6px;
-      &:last-child{
-        border-bottom-right-radius:10px;
-        border-bottom-left-radius:10px;
-      }
     }
   }
   .promoted-list, .submission-list{
@@ -108,7 +104,7 @@ header{
     height:51px;
     margin:0;
     padding:1%;
-    resize:vertical;
+    resize:none;
     width:70%;
   }
 }
@@ -132,13 +128,25 @@ header{
    .votes{
      width:100%;
      background:#CF633D;
+     font-size:30px;
      font-weight:bold;
      color:#fff;
      text-align:center;
      height:50%;
+     span{
+       font-size:10px;
+       display:block;
+       &:first-child{
+         font-size:30px;
+       }
+     }
    }
    .like{
      height:50%;
+     text-align: center;
+     display: block;
+     font-size: 30px;
+     margin-top: 10px;
    }
  }
  .loading{
