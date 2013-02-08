@@ -30,7 +30,9 @@ class App.Views.Submitted extends Backbone.View
 
   promoteSubmission: ->
     @model.collection.remove(@model)
-    App.promoted_list.add @model
+    @model.set('state', 'promoted')
+    App.promoted_list.add @model, { silent: true }
+    App.promoted_list.trigger('add-new', @model)
 
   remove: ->
     @$el.css('background', '#C7DEA9').fadeOut(1600)

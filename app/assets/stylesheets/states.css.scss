@@ -1,0 +1,54 @@
+.state{
+  display:inline-block;
+  border-radius:5px;
+  > div{
+    //width:100%;
+    //height:100%;
+    padding:5px;;
+  }
+  .promoted{
+    background:#2567ab;
+    color:#fff;
+    &:after{
+      content:'promoted';
+      padding:5px;
+    }
+  }
+  .accepted{
+    background:#C7DEA9;
+    color:#fff;
+    &:after{
+      content:'accepted';
+      padding:5px;
+    }
+  }
+  .rejected{
+    background:#CB252A;
+    color:#fff;
+    &:after{
+      content:'rejected';
+      padding:5px;
+    }
+  }
+  .done{
+    background: #ffee35;
+    color:#fff;
+    &:after{
+      content:'done';
+      padding:5px;
+    }
+  }
+}
+.actions{
+  float:right;
+  a{
+    font-size:14px;
+    font-weight:bold;
+    &.reject{
+      color: #bf1e24;
+    }
+    &.accept{
+      color: #139033;
+    }
+  }
+}

@@ -1,4 +1,11 @@
-{{ this.description }}
+.info
+  .mood
+    mood
+  .time
+    48 hours
+.description
+  %p
+    {{ this.description }}
 .vote-controls
-  = link_to '+1', '#', class: 'like'
   .votes {{ this.votes }}
+  = link_to '+1', '#', class: 'like'

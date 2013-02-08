@@ -15,6 +15,7 @@
 //= require handlebars.runtime
 //= require jquery.endless-scroll
 //= require underscore
+//= require underscore.string
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink

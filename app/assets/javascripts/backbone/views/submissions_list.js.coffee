@@ -1,7 +1,7 @@
 class App.Views.SubmissionsList extends Backbone.View
   el: 'section.submission-list'
 
-  template: "<ul class='submissions list'></ul>"
+  template: HandlebarsTemplates['backbone/templates/submission_list']
 
   initialize: ->
     @collection.on 'add', @addOne, @
@@ -27,7 +27,7 @@ class App.Views.SubmissionsList extends Backbone.View
     model.trigger('remove')
 
   initializeEndlessScrolling: ->
-    $(document).endlessScroll
+    $('submission-list').endlessScroll
       fireOnce: false
       fireDelay: 10000
       ceaseFireOnEmpty: false

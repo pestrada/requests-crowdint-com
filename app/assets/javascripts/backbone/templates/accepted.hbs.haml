@@ -6,9 +6,8 @@
     20/12/13
   .mood-state
     happy
-  %div{ class: 'promoted' }
+  %div{ class: 'accepted' }
   {{#if this.isAdmin}}
   .actions
-    = link_to 'accept', '#', {class: 'accept'}
-    = link_to 'reject', '#', {class: 'reject'}
+    = link_to 'Complete', '#', {class: 'complete'}
   {{/if}}

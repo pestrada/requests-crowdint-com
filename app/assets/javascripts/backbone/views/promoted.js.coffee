@@ -1,50 +1,35 @@
 class App.Views.Promoted extends Backbone.View
   tagName: 'li'
 
-  template:                HandlebarsTemplates['backbone/templates/promoted']
-  template_admin:          HandlebarsTemplates['backbone/templates/promoted_admin']
-  template_accepted_admin: HandlebarsTemplates['backbone/templates/promoted_accepted_admin']
+  template: HandlebarsTemplates['backbone/templates/promoted']
 
   events:
     'click .accept'  : 'accept'
     'click .reject'  : 'reject'
-    'click .complete': 'complete'
 
   initialize: ->
     @model.on 'accepted', @acceptSubmission, @
     @model.on 'rejected', @rejectSubmission, @
-    @model.on 'completed', @completeSubmission, @
 
   render: ->
-    if App.isAdmin == true
-      @$el.html(@template_admin(@model.toJSON()))
-      if @model.get('state') == 'accepted'
-        @$el.html(@template_accepted_admin(@model.toJSON()))
-    else
-      @$el.html(@template(@model.toJSON()))
+    json = @model.toJSON()
+    _.extend json, { isAdmin: App.isAdmin }
+    @$el.html(@template(json))
     @$el.fadeIn()
     @
+
+  acceptSubmission: ->
+    accepted_view = new App.Views.Accepted({ model: @model })
+    @$el.replaceWith accepted_view.render().el
 
   accept: (e) ->
     e.preventDefault()
     @model.accept()
 
+  rejectSubmission: ->
+    rejected_view = new App.Views.Rejected({ model: @model })
+    @$el.replaceWith rejected_view.render().el
+
   reject: (e) ->
     e.preventDefault()
     @model.reject()
-
-  complete: (e) ->
-    e.preventDefault()
-    @model.complete()
-
-  acceptSubmission: ->
-    @$el.find('.state div').removeClass().addClass('accepted')
-    @$el.find('.actions').hide()
-
-  rejectSubmission: ->
-    @$el.find('.state div').removeClass().addClass('rejected')
-    @$el.find('.actions').hide()
-
-  completeSubmission: ->
-    @$el.find('.state div').removeClass().addClass('done')
-    @$el.find('.actions').hide()
