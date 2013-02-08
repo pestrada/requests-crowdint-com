@@ -132,7 +132,8 @@ header{
      font-weight:bold;
      color:#fff;
      text-align:center;
-     height:50%;
+     height:60%;
+     padding-top:5px;
      span{
        font-size:10px;
        display:block;
@@ -142,11 +143,11 @@ header{
      }
    }
    .like{
-     height:50%;
+     height:40%;
      text-align: center;
      display: block;
      font-size: 30px;
-     margin-top: 10px;
+     margin-top: 5px;
    }
  }
  .loading{
