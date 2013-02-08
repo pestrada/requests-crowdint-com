@@ -26,7 +26,7 @@ class App.Views.Submitted extends Backbone.View
     @model.like()
 
   updateVotes: (model)->
-    @$el.find('.votes').html(model.get('votes'))
+    @$el.find('.votes span:first-child').html(model.get('votes'))
 
   promoteSubmission: ->
     @model.collection.remove(@model)
