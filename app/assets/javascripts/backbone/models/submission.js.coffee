@@ -30,6 +30,13 @@ class App.Models.Submission extends Backbone.Model
       success: (data, status, xhr)=>
         @trigger('rejected')
 
+  complete: ->
+    $.ajax
+      type: 'POST'
+      url: "/api/submissions/#{@id}/complete"
+      success: (data, status, xhr)=>
+        @trigger('completed')
+
 
 class App.Collections.Submissions extends Backbone.Collection
   model: App.Models.Submission
