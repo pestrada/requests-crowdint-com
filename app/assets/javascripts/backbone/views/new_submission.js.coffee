@@ -9,6 +9,7 @@ class App.Views.NewSubmission extends Backbone.View
 
   render: ->
     @$el.html(@template)
+    @createMoodDropdown()
 
   show: ->
     @$el.show()
@@ -34,3 +35,8 @@ class App.Views.NewSubmission extends Backbone.View
       success: =>
         @collection.add submission, { silent: true }
         @collection.trigger 'add-new', submission
+
+  createMoodDropdown: ->
+    $("#demo-htmlselect").ddslick
+      width: "80px"
+      enableKeyboard: false

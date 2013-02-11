@@ -15,6 +15,7 @@
 //= require handlebars.runtime
 //= require jquery.endless-scroll
 //= require underscore
+//= require jquery.dropdown
 //= require underscore.string
 //= require backbone
 //= require backbone_rails_sync
