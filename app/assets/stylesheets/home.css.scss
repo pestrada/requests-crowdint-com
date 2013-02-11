@@ -1,3 +1,4 @@
+/***************************************************Header*/
 #logo{
   background: url(/assets/logo.png) no-repeat;
   display: inline-block;
@@ -13,15 +14,18 @@ header{
     li{
       float:left;
       a{
-        padding:1em;
         display:inline-block;
+        padding:1em;
       }
     }
   }
 }
+/***************************************************Main*/
 .main{
   margin:0 auto;
   max-width:940px;
+  min-width:700px;
+  overflow:hidden;
 }
 .container{
   /*box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;*/
@@ -32,125 +36,66 @@ header{
     text-align:left;
     li{
       background:#fff;
-      overflow:hidden;
       margin-top:6px;
+      overflow:hidden;
     }
   }
-  .promoted-list, .submission-list{
-    p{
-      font-size:12px;
-    }
-  }
-  .promoted-list{
-    width: 40.42553191489362%;
-    float: left;
-    max-width:380px;
-    display:inline-block;
-    vertical-align:top;
-    li{
-      height:79px;
-      padding:30px 18px 27px;
-      position:relative;
-      .state{
-        position:absolute;
-        bottom:0;
-        & > div{
-          float:left;
-          font-size:11px;
-        }
-      }
-    }
-  }
-  .submission-list{
-    width: 57.4468085106383%;
-    max-width:540px;
-    display:inline-block;
-    margin-right: 2.12765957446809%;
-    float: left;
-    li{
-      height:105px;
-      padding:0 60px 0 100px;
-      position:relative;
-      .description{
-        padding:30px 18px;
-        display:inline-block;
-      }
-      .info{
-        height:100%;
-        position: absolute;
-        top: 0;
-        left: 18px;
-      }
-    }
+}
+/***************************************************Lists*/
+.promoted-list, .submission-list{
+  p{
+    font-size:12px;
   }
 }
 .mood{
   border-right: 1px solid #ccc;
   background:#ddd;
-  display: block;
   float:left;
   height: 70px;
+  left:0;
+  position:absolute;
+  top:0;
   width: 80px;
 }
+/***************************************************Form*/
 .form{
-  overflow:hidden;
   margin-bottom:33px;
+  overflow:hidden;
+  position:relative;
   textarea{
     border:none;
-    display:inline;
     font-size:12px;
     float:left;
     font-style:italic;
-    height:51px;
+    height:69px;
     margin:0;
-    padding:1%;
+    padding:9px 178px 9px 89px;
     resize:none;
-    width:70%;
+    width:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
   }
 }
 .button {
   background:#000;
   color:#fff;
-  font-size: 12px;
-  padding-top: 28px;
-  float: left;
-  width: 140px;
-  height: 42px;
-  margin: 0;
-  width: 170px;
+  font-size:12px;
+  float:left;
+  height:42px;
+  margin:0;
+  padding-top:28px;
+  position:absolute;
+  right:0;
+  top:0;
+  width:170px;
 }
- .vote-controls{
-   height:100%;
-   width:60px;
-   position: absolute;
-   top: 0;
-   right: 0;
-   .votes{
-     width:100%;
-     background:#CF633D;
-     font-size:30px;
-     font-weight:bold;
-     color:#fff;
-     text-align:center;
-     height:60%;
-     padding-top:5px;
-     span{
-       font-size:10px;
-       display:block;
-       &:first-child{
-         font-size:30px;
-       }
-     }
-   }
-   .like{
-     height:40%;
-     text-align: center;
-     display: block;
-     font-size: 30px;
-     margin-top: 5px;
-   }
- }
- .loading{
-   text-align:center;
- }
-
+/***************************************************Footer*/
+.footer{
+  height:40px;
+  margin-top:20px;
+}
+/***************************************************Extra*/
+.loading{
+  text-align:center;
+}

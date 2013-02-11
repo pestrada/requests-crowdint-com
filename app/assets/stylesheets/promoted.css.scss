@@ -1,0 +1,20 @@
+.promoted-list{
+  display:inline-block;
+  float: left;
+  max-width:380px;
+  vertical-align:top;
+  width: 40.42553191489362%;
+  li{
+    height:79px;
+    padding:30px 18px 27px;
+    position:relative;
+    .state{
+      bottom:0;
+      position:absolute;
+      & > div{
+        float:left;
+        font-size:11px;
+      }
+    }
+  }
+}
