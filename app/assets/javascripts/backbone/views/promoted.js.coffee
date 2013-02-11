@@ -26,6 +26,7 @@ class App.Views.Promoted extends Backbone.View
   accept: (e) ->
     e.preventDefault()
     @model.accept()
+    @stopListening()
 
   rejectSubmission: ->
     rejected_view = new App.Views.Rejected({ model: @model })
@@ -34,3 +35,4 @@ class App.Views.Promoted extends Backbone.View
   reject: (e) ->
     e.preventDefault()
     @model.reject()
+    @stopListening()

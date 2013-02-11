@@ -25,6 +25,7 @@ class App.Views.Submitted extends Backbone.View
   like: (e)->
     e.preventDefault()
     @model.like()
+    @stopListening()
 
   updateVotes: (model)->
     @$el.find('.votes span:first-child').html(model.get('votes'))
