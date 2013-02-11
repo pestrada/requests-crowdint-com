@@ -24,4 +24,4 @@ class App.Views.Accepted extends Backbone.View
   complete: (e) ->
     e.preventDefault()
     @model.complete()
-    @stopListening()
+    @undelegateEvents()
