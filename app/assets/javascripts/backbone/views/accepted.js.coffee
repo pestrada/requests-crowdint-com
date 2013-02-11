@@ -7,6 +7,7 @@ class App.Views.Accepted extends Backbone.View
     'click .complete': 'complete'
 
   initialize: ->
+    @$el.attr('id', "request-#{@model.id}")
     @model.on('completed', @completeSubmission, @)
 
   render: ->

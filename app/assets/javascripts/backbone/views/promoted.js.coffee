@@ -8,6 +8,7 @@ class App.Views.Promoted extends Backbone.View
     'click .reject'  : 'reject'
 
   initialize: ->
+    @$el.attr('id', "request-#{@model.id}")
     @model.on 'accepted', @acceptSubmission, @
     @model.on 'rejected', @rejectSubmission, @
 

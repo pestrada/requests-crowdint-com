@@ -1,0 +1,4 @@
+%h1 A new request has been promoted
+%blockquote "#{@request.description}"
+%p
+  = link_to 'see it here', root_url + "#requests/#{@request.id}"

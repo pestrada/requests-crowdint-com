@@ -12,6 +12,7 @@ class App.Views.Submitted extends Backbone.View
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
+    @$el.attr('id', "request-#{@model.id}")
     @model.on 'change:votes', @updateVotes, @
     @model.on 'promoted', @promoteSubmission, @
     @model.on 'remove', @remove, @
