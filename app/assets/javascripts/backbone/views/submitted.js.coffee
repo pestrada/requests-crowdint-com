@@ -18,7 +18,10 @@ class App.Views.Submitted extends Backbone.View
     @model.on 'remove', @remove, @
 
   render: ->
-    @$el.html(@template(@model.toJSON()))
+    json = @model.toJSON()
+    time = moment(json.created_at).add('day', 7).fromNow();
+    _.extend json, { created_at: time }
+    @$el.html(@template(json))
     @$el.fadeIn()
     @
 
