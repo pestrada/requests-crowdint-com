@@ -1,3 +1,4 @@
+// ************************************************** Header
 header{
   margin-bottom:10px;
   overflow:hidden;
@@ -19,7 +20,7 @@ header{
   height: 67px;
   width: 156px;
 }
-/***************************************************Main*/
+// ************************************************** Main
 .main{
   margin:0 auto;
   max-width:940px;
@@ -27,7 +28,6 @@ header{
   overflow:hidden;
 }
 .container{
-  /*box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;*/
   margin:0 auto;
   min-height:400px;
   text-align:center;
@@ -40,7 +40,7 @@ header{
     }
   }
 }
-/***************************************************Lists*/
+// ************************************************** Lists
 .promoted-list, .submission-list{
   margin-top:30px;
   p{
@@ -57,7 +57,7 @@ header{
   top:0;
   width: 80px;
 }
-/***************************************************Form*/
+// ************************************************** Form
 .form{
   overflow:visible;
   position:relative;
@@ -88,12 +88,12 @@ header{
   top:0;
   width:170px;
 }
-/***************************************************Footer*/
+// ************************************************** Footer
 .footer{
   height:40px;
   margin-top:20px;
 }
-/***************************************************Extra*/
+// ************************************************** Extra
 .loading{
   text-align:center;
 }
