@@ -18,6 +18,7 @@
 //= require underscore
 //= require jquery.dropdown
 //= require underscore.string
+//= require moment
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink

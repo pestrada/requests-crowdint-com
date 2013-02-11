@@ -14,7 +14,8 @@ class App.Views.Promoted extends Backbone.View
 
   render: ->
     json = @model.toJSON()
-    _.extend json, { isAdmin: App.isAdmin }
+    created_at = moment(json.created_at).format("MMM Do YY")
+    _.extend json, { isAdmin: App.isAdmin, created_at: created_at }
     @$el.html(@template(json))
     @$el.fadeIn()
     @
