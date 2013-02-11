@@ -28,9 +28,10 @@ class App.Views.NewSubmission extends Backbone.View
 
   add_new_submission: (description)->
     textarea = @$el.find('#new_submission')
+    mood = $("#demo-htmlselect").data('ddslick').selectedData.value
     description = textarea.val()
     textarea.val('')
-    submission = new App.Models.Submission({ description: description })
+    submission = new App.Models.Submission({ description: description, mood: mood })
     submission.save {},
       success: =>
         @collection.add submission, { silent: true }
