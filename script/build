@@ -45,7 +45,7 @@ if [ $EXIT_CODE -eq "0" ]; then
     echo -e "\n*******************************************************"
     echo "-- Heroku deploy"
     git push heroku master
-    wget $HEROKU_URL --no-check-certificate -O /tmp/retro.html
+    wget $HEROKU_URL --no-check-certificate -O /tmp/requests.html
     EXIT_CODE=$? # break the build if the server returns an error
   fi
 
