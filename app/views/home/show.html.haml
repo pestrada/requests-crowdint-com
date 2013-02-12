@@ -12,6 +12,8 @@
 
   App.isAdmin = #{current_user.admin?}
 
+  App.pusherKey = "#{Pusher.key}"
+
   $(function(){
     App.layout = new App.Views.Application();
     App.layout.render();

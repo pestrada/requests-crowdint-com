@@ -20,6 +20,9 @@ gem 'rails-backbone'
 gem 'acts_as_votable',
     git: 'git://github.com/supherman/acts_as_votable.git',
     branch: 'sti-voter'
+
+gem 'pusher', "~> 0.11.3"
+gem 'pusher_rails'
 gem 'unicorn'
 
 gem 'voting_app',

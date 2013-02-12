@@ -22,5 +22,7 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
+//= require pusher
+//= require backpusher
 //= require backbone/requests_crowdint_com
 //= require_tree .

@@ -1,23 +1,26 @@
 class SubmissionObserver < ActiveRecord::Observer
   observe VotingApp::Submission
 
-  def after_create(submission)
-    Notifier.new_request(submission).deliver
+  def notify_accepted(notification)
+    Notifier.request_accepted(notification.submission).deliver
   end
 
-  def after_accept(submission, transition)
-    Notifier.request_accepted(submission).deliver
+  def notify_completed(notification)
+    Notifier.request_completed(notification.submission).deliver
   end
 
-  def after_complete(submission, transition)
-    Notifier.request_completed(submission).deliver
+  def notify_created(notification)
+    Notifier.new_request(notification.submission).deliver
   end
 
-  def after_promote(submission, transition)
-    Notifier.request_promoted(submission).deliver
+  def notify_liked(notification)
   end
 
-  def after_reject(submission, transition)
-    Notifier.request_rejected(submission).deliver
+  def notify_promoted(notification)
+    Notifier.request_promoted(notification.submission).deliver
+  end
+
+  def notify_rejected(notification)
+    Notifier.request_rejected(notification.submission).deliver
   end
 end
