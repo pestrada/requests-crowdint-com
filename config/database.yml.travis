@@ -1,0 +1,7 @@
+test: &test
+  adapter: postgresql
+  database: requests
+  username: postgres
+
+cucumber:
+  <<: *test
