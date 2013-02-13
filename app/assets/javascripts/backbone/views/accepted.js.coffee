@@ -8,7 +8,7 @@ class App.Views.Accepted extends Backbone.View
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")
-    @model.on('completed', @completeSubmission, @)
+    @model.on('completed', @completeRequest, @)
 
   render: ->
     json = @model.toJSON()
@@ -18,7 +18,7 @@ class App.Views.Accepted extends Backbone.View
     @$el.fadeIn()
     @
 
-  completeSubmission: ->
+  completeRequest: ->
     completed_view = new App.Views.Done({ model: @model })
     @$el.replaceWith completed_view.render().el
 

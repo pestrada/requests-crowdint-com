@@ -8,7 +8,7 @@ class App.Views.Application extends Backbone.View
 
   render: ->
     @$el.html(@template)
-    App.form = new App.Views.NewSubmission({ collection: App.submitted_list })
+    App.form = new App.Views.NewRequest({ collection: App.submitted_list })
     App.form.render()
 
   initializePusher: ->

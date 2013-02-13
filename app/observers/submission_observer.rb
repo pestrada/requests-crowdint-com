@@ -1,5 +1,5 @@
 class SubmissionObserver < ActiveRecord::Observer
-  observe VotingApp::Submission
+  observe VotingApp::Request
 
   def notify_accepted(notification)
     Notifier.request_accepted(notification.submission).deliver

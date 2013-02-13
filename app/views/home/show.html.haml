@@ -1,6 +1,6 @@
 :javascript
-  var submitted = #{Rabl::Renderer.json(@submitted, 'home/submissions', :view_path => 'app/views')};
-  var promoted = #{Rabl::Renderer.json(@promoted, 'home/submissions', :view_path => 'app/views')};
+  var submitted = #{Rabl::Renderer.json(@submitted, 'home/requests', :view_path => 'app/views')};
+  var promoted = #{Rabl::Renderer.json(@promoted, 'home/requests', :view_path => 'app/views')};
 
   App.submitted_list = new App.Collections.Submitted();
   App.promoted_list  = new App.Collections.Promoted();

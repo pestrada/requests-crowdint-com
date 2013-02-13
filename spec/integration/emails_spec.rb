@@ -2,7 +2,7 @@ require 'spec_helper'
 
 #describe 'Emails' do
 #  let(:user) { User.create email: 'foo@example.com' }
-#  let!(:request) { VotingApp::Submission.create description: 'foo' }
+#  let!(:request) { VotingApp::Request.create description: 'foo' }
 #
 #  it 'sends an email after a request is created' do
 #    email = ActionMailer::Base.deliveries.last

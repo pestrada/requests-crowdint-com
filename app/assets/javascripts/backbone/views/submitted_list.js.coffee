@@ -1,4 +1,4 @@
-class App.Views.SubmissionsList extends Backbone.View
+class App.Views.SubmittedList extends Backbone.View
   el: 'section.submission-list'
 
   template: HandlebarsTemplates['backbone/templates/submission_list']
@@ -6,7 +6,7 @@ class App.Views.SubmissionsList extends Backbone.View
   initialize: ->
     @collection.on 'add', @addOne, @
     @collection.on 'add-new', @addNew, @
-    @collection.on 'remove', @removeSubmission, @
+    @collection.on 'remove', @removeRequest, @
 
   render: ->
     @$el.html @template
@@ -15,15 +15,15 @@ class App.Views.SubmissionsList extends Backbone.View
   addAll: ->
     @collection.each @addOne, @
 
-  addOne: (submission)->
-    view = new App.Views.Submitted({ model: submission })
+  addOne: (request)->
+    view = new App.Views.Submitted({ model: request })
     @$el.find('ul.list').append(view.render().el)
 
-  addNew: (submission)->
-    view = new App.Views.Submitted({ model: submission })
+  addNew: (request)->
+    view = new App.Views.Submitted({ model: request })
     @$el.find('ul.list').prepend(view.render().el)
 
-  removeSubmission: (model)->
+  removeRequest: (model)->
     model.trigger('remove')
 
   initializeEndlessScrolling: ->

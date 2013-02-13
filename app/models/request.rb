@@ -1,4 +1,4 @@
-class Submission < VotingApp::Submission
+class Request < VotingApp::Request
   acts_as_votable
 
   belongs_to :user

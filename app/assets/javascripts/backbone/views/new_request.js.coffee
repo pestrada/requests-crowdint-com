@@ -1,7 +1,7 @@
-class App.Views.NewSubmission extends Backbone.View
+class App.Views.NewRequest extends Backbone.View
   el: 'section.form'
 
-  template: HandlebarsTemplates['backbone/templates/new_submission']
+  template: HandlebarsTemplates['backbone/templates/new_request']
 
   events:
     'click #add_new_submission': 'add_new_submission_on_click'
@@ -31,11 +31,11 @@ class App.Views.NewSubmission extends Backbone.View
     mood = $("#demo-htmlselect").data('ddslick').selectedData.value
     description = textarea.val()
     textarea.val('')
-    submission = new App.Models.Submission({ description: description, mood: mood })
-    submission.save {},
+    request = new App.Models.Request({ description: description, mood: mood })
+    request.save {},
       success: =>
-        @collection.add submission, { silent: true }
-        @collection.trigger 'add-new', submission
+        @collection.add request, { silent: true }
+        @collection.trigger 'add-new', request
 
   createMoodDropdown: ->
     $("#demo-htmlselect").ddslick

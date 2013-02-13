@@ -14,7 +14,7 @@ class App.Views.Submitted extends Backbone.View
     @$el.addClass("submission-#{@model.id}")
     @$el.attr('id', "request-#{@model.id}")
     @model.on 'change:votes', @updateVotes, @
-    @model.on 'promoted', @promoteSubmission, @
+    @model.on 'promoted', @promoteRequest, @
     @model.on 'remove', @remove, @
 
   render: ->
@@ -33,7 +33,7 @@ class App.Views.Submitted extends Backbone.View
   updateVotes: (model)->
     @$el.find('.votes span:first-child').html(model.get('votes'))
 
-  promoteSubmission: ->
+  promoteRequest: ->
     @model.collection.remove(@model)
     @model.set('state', 'promoted')
     App.promoted_list.add @model, { silent: true }

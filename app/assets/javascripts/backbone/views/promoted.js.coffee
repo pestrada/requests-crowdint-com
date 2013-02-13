@@ -9,8 +9,8 @@ class App.Views.Promoted extends Backbone.View
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")
-    @model.on 'accepted', @acceptSubmission, @
-    @model.on 'rejected', @rejectSubmission, @
+    @model.on 'accepted', @acceptRequest, @
+    @model.on 'rejected', @rejectRequest, @
 
   render: ->
     json = @model.toJSON()
@@ -20,7 +20,7 @@ class App.Views.Promoted extends Backbone.View
     @$el.fadeIn()
     @
 
-  acceptSubmission: ->
+  acceptRequest: ->
     accepted_view = new App.Views.Accepted({ model: @model })
     @$el.replaceWith accepted_view.render().el
 
@@ -29,7 +29,7 @@ class App.Views.Promoted extends Backbone.View
     @model.accept()
     @undelegateEvents()
 
-  rejectSubmission: ->
+  rejectRequest: ->
     rejected_view = new App.Views.Rejected({ model: @model })
     @$el.replaceWith rejected_view.render().el
 

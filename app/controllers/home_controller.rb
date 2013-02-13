@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def show
-    @submitted = Submission.submitted
-    @promoted  = Submission.processed
+    @submitted = Request.submitted
+    @promoted  = Request.processed
   end
 end

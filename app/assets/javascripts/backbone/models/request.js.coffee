@@ -1,5 +1,5 @@
-class App.Models.Submission extends Backbone.Model
-  urlRoot: '/api/submissions'
+class App.Models.Request extends Backbone.Model
+  urlRoot: '/api/requests'
 
   defaults:
     votes: 0
@@ -11,7 +11,7 @@ class App.Models.Submission extends Backbone.Model
   like: ->
     $.ajax
       type: 'POST'
-      url: "/api/submissions/#{@id}/vote"
+      url: "/api/requests/#{@id}/vote"
       success: (data, status, xhr)=>
         @set({ votes: data.votes })
         @trigger('promoted') if data.votes >= App.votesLimit
@@ -19,27 +19,27 @@ class App.Models.Submission extends Backbone.Model
   accept: ->
     $.ajax
       type: 'POST'
-      url: "/api/submissions/#{@id}/accept"
+      url: "/api/requests/#{@id}/accept"
       success: (data, status, xhr)=>
         @trigger('accepted')
 
   reject: ->
     $.ajax
       type: 'POST'
-      url: "/api/submissions/#{@id}/reject"
+      url: "/api/requests/#{@id}/reject"
       success: (data, status, xhr)=>
         @trigger('rejected')
 
   complete: ->
     $.ajax
       type: 'POST'
-      url: "/api/submissions/#{@id}/complete"
+      url: "/api/requests/#{@id}/complete"
       success: (data, status, xhr)=>
         @trigger('completed')
 
 
-class App.Collections.Submissions extends Backbone.Collection
-  model: App.Models.Submission
+class App.Collections.Requests extends Backbone.Collection
+  model: App.Models.Request
   page: 1
   last_page: false
 
@@ -56,9 +56,9 @@ class App.Collections.Submissions extends Backbone.Collection
   isLastPage: ->
     @last_page is true
 
-class App.Collections.Submitted extends App.Collections.Submissions
-  url: '/api/submissions'
+class App.Collections.Submitted extends App.Collections.Requests
+  url: '/api/requests'
 
 
-class App.Collections.Promoted extends App.Collections.Submissions
-  url: '/api/submissions?state=processed'
+class App.Collections.Promoted extends App.Collections.Requests
+  url: '/api/requests?state=processed'

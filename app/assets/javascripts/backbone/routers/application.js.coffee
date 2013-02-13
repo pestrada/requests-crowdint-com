@@ -1,19 +1,19 @@
 class App.Routers.Application extends Backbone.Router
   routes:
     'requests/:id': 'showRequest'
-    ''            : 'showSubmissionList'
+    ''            : 'showRequestList'
 
-  showSubmissionList: ->
-    App.submissions_view = new App.Views.SubmissionsList({ collection: App.submitted_list }) unless App.submissions_view?
-    App.submissions_view.render()
+  showRequestList: ->
+    App.requests_view = new App.Views.SubmittedList({ collection: App.submitted_list }) unless App.requests_view?
+    App.requests_view.render()
     App.promoted_view = new App.Views.PromotedList({ collection: App.promoted_list }) unless App.promoted_view?
     App.promoted_view.render()
-    App.submissions_view.initializeEndlessScrolling()
+    App.requests_view.initializeEndlessScrolling()
     App.promoted_view.initializeEndlessScrolling()
     App.form.show()
 
   showRequest: (id)->
-    @showSubmissionList()
+    @showRequestList()
     request = $("#request-#{id}")
     if request.length > 0
       $('html, body').animate({ scrollTop: request.offset().top }, 'slow');
