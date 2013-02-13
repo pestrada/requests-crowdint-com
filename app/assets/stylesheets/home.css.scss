@@ -1,30 +1,16 @@
-// ************************************************** Header
-header{
-  margin-bottom:10px;
-  overflow:hidden;
-  ul{
-    float:right;
-    li{
-      float:left;
-      a{
-        display:inline-block;
-        padding:1em;
-      }
-    }
-  }
-}
-#logo{
-  background: url(/assets/logo.png) no-repeat;
-  display: inline-block;
-  float: left;
-  height: 67px;
-  width: 156px;
-}
 // ************************************************** Main
+header{
+  background: url(/assets/header.png);
+  height: 337px;
+  position:relative;
+  width: 100%;
+}
 .main{
+  background: url(/assets/bkg.png);
+  background-position-x:center;
+  background-repeat:no-repeat;
   margin:0 auto;
-  max-width:940px;
-  min-width:700px;
+  width:985px;
   overflow:hidden;
 }
 .container{
@@ -48,45 +34,51 @@ header{
   }
 }
 .mood{
+  border-radius: 50px;
   border-right: 1px solid #ccc;
   background:#ddd;
-  float:left;
-  height: 70px;
-  left:0;
-  position:absolute;
-  top:0;
+  height: 40px;
   width: 80px;
 }
 // ************************************************** Form
 .form{
+  bottom:56px;
+  text-align:center;
   overflow:visible;
-  position:relative;
+  position:absolute;
+  width:100%;
+  > * {
+    -moz-box-shadow: 0px 0px 10px #aaa;
+    -webkit-box-shadow: 0px 0px 10px #aaa;
+    box-shadow: 0px 0px 10px #aaa;
+    display:inline-block;
+    vertical-align:top;
+  }
   textarea{
-    border:none;
-    font-size:12px;
-    font-style:italic;
-    height:70px;
+    border-radius:50px;
+    border:2px solid #f6f6f6;
+    -moz-box-shadow: inset -0px -0px 10px #aaa;
+    -webkit-box-shadow: inset -0px -0px 10px #aaa;
+    box-shadow: inset -0px -0px 10px #aaa;
+    font-size:10px;
+    height:12px;
     margin:0;
-    padding:9px 178px 9px 89px;
+    padding:10px 5px 10px 50px;
     resize:none;
-    width:100%;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+    width:640px;
   }
 }
 .button {
-  background:#000;
+  background:#222;
+  border:3px solid #f6f6f6;
+  border-radius:50px;
   color:#fff;
   font-size:12px;
-  float:left;
-  height:42px;
+  height:19px;
   margin:0;
-  padding-top:28px;
-  position:absolute;
-  right:0;
-  top:0;
-  width:170px;
+  padding-top:9px;
+  text-align:center;
+  width:90px;
 }
 // ************************************************** Footer
 .footer{

@@ -34,6 +34,7 @@
 		cursor:pointer;
 	}
 	.dd-selected { 
+		border-radius:50px;
 		overflow:hidden; 
 		display:block; 
 		padding:0;
@@ -137,7 +138,7 @@
 	.dd-option-image, .dd-selected-image { 
 		vertical-align:middle; 
 		float:left;
-    height:55px;
+    height:25px;
 		margin-right:5px; 
 		max-width:64px;
 	}
