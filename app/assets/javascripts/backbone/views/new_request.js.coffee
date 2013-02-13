@@ -8,7 +8,7 @@ class App.Views.NewRequest extends Backbone.View
     'keyup #new_submission' : 'add_new_submission_on_enter'
 
   render: ->
-    @$el.html(@template)
+    $('header').append(@$el.html(@template))
     @createMoodDropdown()
 
   show: ->
