@@ -6,4 +6,14 @@
     {{ this.created_at }}
   .mood-state
     {{ this.mood }}
+  .comments
+  {{#unless this.isAdmin}}
   %div{ class: 'rejected' }
+  {{/unless}}
+{{#if this.isAdmin}}
+.actions
+  %a.reject.disabled-btn Reject
+  %a.accept.disabled-btn Accept
+  %a.complete.disabled-btn Complete
+  %div{ class: 'rejected' }
+{{/if}}

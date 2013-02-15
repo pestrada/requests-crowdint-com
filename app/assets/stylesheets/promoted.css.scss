@@ -7,17 +7,96 @@
     padding-left:20px;
   }
   li{
-    height:79px;
-    padding:18px 0 16px;
+    padding:18px 0 0px;
     position:relative;
     border-bottom:1px dashed #ccc;;
-    .state{
-      bottom:0;
-      position:absolute;
-      & > div{
-        float:left;
-        font-size:11px;
-      }
+  }
+  .description{
+    height:79px;
+  }
+}
+/***************************************************States*/
+.state{
+  border-radius:5px;
+  display:inline-block;
+  margin-bottom:10px;
+  > div{
+    float:left;
+    font-size:11px;
+    margin-right:10px;
+  }
+}
+.promoted{
+  &:after{
+    content:'Waiting for reply';
+    padding:5px;
+  }
+}
+.accepted{
+  color:#7BC2C2;
+  &:after{
+    content:'Accepted';
+    padding:5px;
+  }
+}
+.rejected{
+  color:#CB252A;
+  &:after{
+    content:'Rejected';
+    padding:5px;
+  }
+}
+.done{
+  color:#F19000;
+  &:after{
+    content:'Done';
+    padding:5px;
+  }
+}
+.comments{
+  background:url(/assets/icons/comment-for-icon-black.png) no-repeat;
+  background-position:center;
+  display:inline-block;
+  height:8px;
+  width:10px;
+}
+/***************************************************Admin actions*/
+.actions{
+  margin-left:5px;
+  margin-bottom:10px;
+  > *{
+    display:inline-block;
+    vertical-align:middle;
+  }
+  a{
+    -moz-box-shadow: 0px 0px 5px #aaa;
+    -webkit-box-shadow: 0px 0px 5px #aaa;
+    box-shadow: 0px 0px 5px #aaa;
+    border:2px solid #f6f6f6;
+    border-radius:100px;
+    height:17px;
+    text-indent:-999999px;
+    width:17px;
+    &.reject{
+      background:url(/assets/icons/rejected-for-icon-white.png) no-repeat #D64826;
+      background-position-x: center;
+      background-position-y: 3px;
+    }
+    &.accept{
+      background:url(/assets/icons/accepted-for-icon-white.png) no-repeat #7BC2C2;
+      background-position-x: center;
+      background-position-y: 3px;
+    }
+    &.complete{
+      background:url(/assets/icons/done-for-icon-white.png) no-repeat #F19000;
+      background-position-x: center;
+      background-position-y: 4px;
+    }
+    &.disabled-btn{
+      background-color:transparent;
     }
   }
+  & > *:not(:first-child){
+      margin-left:7px;
+    }
 }

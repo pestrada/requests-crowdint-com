@@ -6,9 +6,14 @@
     {{ this.created_at }}
   .mood-state
     {{ this.mood }}
+  .comments
+  {{#unless this.isAdmin}}
   %div{ class: 'promoted' }
-  {{#if this.isAdmin}}
-  .actions
-    = link_to 'accept', '#', {class: 'accept'}
-    = link_to 'reject', '#', {class: 'reject'}
-  {{/if}}
+  {{/unless}}
+{{#if this.isAdmin}}
+.actions
+  = link_to 'accept', '#', {class: 'accept', title: 'Accept request'}
+  = link_to 'reject', '#', {class: 'reject', title: 'Reject request'}
+  %a.complete.disabled-btn Complete
+  %div{ class: 'promoted' }
+{{/if}}
