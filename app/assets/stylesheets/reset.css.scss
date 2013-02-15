@@ -39,10 +39,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 p, a{
-  font-size:25px;
+  font-size:12px;
 }
 a{
-  color:#CF633D;
+  color:#F19000;
   text-decoration:none;
 }
 a:hover{
@@ -55,8 +55,9 @@ ul{
 .hidden{
   display: none;
 }
-h2{
-  font-weight:bold;
-  margin-bottom:15px;
-  text-align:left;
+.fancy-border{
+  border-bottom: 1px solid #f6f6f6;
+  -webkit-box-shadow: 0 2px 1px -1px #ddd;;
+  -moz-box-shadow: 0 2px 1px -1px #ddd;;
+  box-shadow: 0 2px 1px -1px #ddd;
 }

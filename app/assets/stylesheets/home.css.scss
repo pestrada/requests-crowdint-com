@@ -14,13 +14,54 @@ header{
   overflow:hidden;
 }
 .container{
+  background:rgba(238, 238, 238, .7);
+  border: 3px solid #f6f6f6;
+  border-radius:50px;
+  -moz-box-shadow:-0px -0px 4px #d7d7d7, inset -0px -0px 4px #d7d7d7;
+  -webkit-box-shadow:-0px -0px 4px #d7d7d7, inset -0px -0px 4px #d7d7d7;
+  box-shadow:-0px -0px 4px #d7d7d7, inset -0px -0px 4px #d7d7d7;
   margin:0 auto;
-  min-height:400px;
+  overflow: hidden;
   text-align:center;
+  width:940px;
+  h2{
+    font-weight:bold;
+    margin-bottom:5px;
+  }
+  p{
+    padding-bottom:10px;
+    margin-bottom:10px;
+  }
+  h2, p{
+    text-align:left;
+  }
+  nav{
+    height:45px;
+    overflow: hidden;
+    ul{
+      position: relative;
+      top: 20px;
+      left: -20px;
+      float:right;
+    }
+    li{
+      float:left;
+      &:not(:last-child){
+        border-right:1px solid #ccc;
+        padding-right:10px;
+      }
+      &:not(:first-child){
+        padding-left:10px;
+      }
+    }
+  }
+  .lists{
+    display:inline-block;
+  }
   ul.list{
     text-align:left;
     li{
-      background:#fff;
+      //background:#fff;
       margin-top:6px;
       overflow:hidden;
     }
@@ -34,11 +75,14 @@ header{
   }
 }
 .mood{
-  border-radius: 50px;
-  border-right: 1px solid #ccc;
-  background:#ddd;
-  height: 40px;
-  width: 80px;
+  border-radius:50px;
+  span.category{
+    font-size:10px;
+    float: left;
+    position: relative;
+    top: 13px;
+    margin-right: 6px;
+  }
 }
 // ************************************************** Form
 .form{
@@ -47,25 +91,34 @@ header{
   overflow:visible;
   position:absolute;
   width:100%;
-  > * {
+  textarea, a{
     -moz-box-shadow: 0px 0px 10px #aaa;
     -webkit-box-shadow: 0px 0px 10px #aaa;
     box-shadow: 0px 0px 10px #aaa;
+  }
+  > *{
     display:inline-block;
+    margin-right:10px;
     vertical-align:top;
   }
   textarea{
     border-radius:50px;
     border:2px solid #f6f6f6;
-    -moz-box-shadow: inset -0px -0px 10px #aaa;
-    -webkit-box-shadow: inset -0px -0px 10px #aaa;
-    box-shadow: inset -0px -0px 10px #aaa;
+    -moz-box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
+    -webkit-box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
+    box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
     font-size:10px;
     height:12px;
-    margin:0;
     padding:10px 5px 10px 50px;
     resize:none;
-    width:640px;
+    width:586px;
+  }
+  #demo-htmlselect{
+    display:inline-block;
+  }
+  .shadow{
+    border-radius: 50px;
+    height: 36px;
   }
 }
 .button {
@@ -74,9 +127,8 @@ header{
   border-radius:50px;
   color:#fff;
   font-size:12px;
-  height:19px;
-  margin:0;
-  padding-top:9px;
+  height:20px;
+  padding-top:10px;
   text-align:center;
   width:90px;
 }

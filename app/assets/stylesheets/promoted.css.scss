@@ -1,13 +1,16 @@
 .promoted-list{
   display:inline-block;
-  float: left;
-  max-width:380px;
   vertical-align:top;
-  width: 40.42553191489362%;
+  width: 355px;
+  ul{
+    border-left:1px dashed #ccc;
+    padding-left:20px;
+  }
   li{
     height:79px;
-    padding:30px 18px 27px;
+    padding:18px 0 16px;
     position:relative;
+    border-bottom:1px dashed #ccc;;
     .state{
       bottom:0;
       position:absolute;

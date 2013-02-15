@@ -1,11 +1,16 @@
-.info
-  .mood
-    {{ this.mood }}
-  .time
-    {{ this.created_at }}
+.mood
+  {{ this.mood }}
 .description
   %p
     {{ this.description }}
+  .info
+    .category-name
+      {{ this.mood }}
+    .time
+      {{ this.created_at }}
+    .owner
+      {{ this.mood }}
+
 .vote-controls
   .votes
     %span {{ this.votes }}

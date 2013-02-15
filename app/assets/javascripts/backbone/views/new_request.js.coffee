@@ -39,5 +39,5 @@ class App.Views.NewRequest extends Backbone.View
 
   createMoodDropdown: ->
     $("#demo-htmlselect").ddslick
-      width: "80px"
+      width: "55px"
       enableKeyboard: false

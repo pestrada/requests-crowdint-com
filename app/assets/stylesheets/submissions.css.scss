@@ -1,31 +1,53 @@
 .submission-list{
   display:inline-block;
-  float: left;
-  margin-right: 2.12765957446809%;
-  max-width:540px;
-  width: 57.4468085106383%;
+  margin-right: 15px;
+  width:510px;
   li{
-    height:105px;
-    padding:0 60px 0 100px;
+    border-bottom:1px dashed #ccc;
+    height:68px;
+    padding:16px 0 16px 0;
     position:relative;
     .description{
       display:inline-block;
-      padding:30px 18px;
+      vertical-align:top;
+      width: 382px;
+      padding: 0 10px;
+      position: relative;
+      height: 100%;
     }
     .info{
-      height:100%;
-      left: 18px;
-      position: absolute;
-      top: 0;
-      width:81px;
+      bottom:0;
+      position:absolute;
+      & > div{
+        float:left;
+        font-size:11px;
+      }
+      & > div:not(:last-child):not(:first-child){
+        padding:0 5px;
+        margin:0 5px;
+        border-left:1px solid #ccc;
+        border-right:1px solid #ccc;
+      }
     }
     .mood{
+      display:inline-block;
+      height:100%;
+      vertical-align:top;
+      width:40px;
       float:none;
       position:relative;
     }
     .time{
-      margin-top:5px;
-      text-align:center;
+
+    }
+    .category-name{
+
+    }
+    .owner{
+
+    }
+    h2{
+      color:#F19000;
     }
   }
 }
@@ -86,32 +108,36 @@
 /***************************************************Votes Controls*/
 .vote-controls{
   height:100%;
-  position:absolute;
-  right:0;
-  top:0;
-  width:60px;
+  width:55px;
+  display:inline-block;
   .votes{
-    background:#CF633D;
-    color:#fff;
-    font-size:30px;
+    color:#777;
     font-weight:bold;
-    height:60%;
-    padding-top:5px;
+    height:50%;
     text-align:center;
     width:100%;
     span{
       display:block;
       font-size:10px;
       &:first-child{
-        font-size:30px;
+        font-size:20px;
+      }
+      &:last-child{
+        font-size:8px;
       }
     }
   }
   .like{
+    color:#222;
     display: block;
-    font-size: 30px;
-    height:40%;
-    margin-top: 5px;
+    font-size: 18px;
+    padding:6px 0;
+    border: 3px solid #fff;
+    background: #7bc2c2;
+    border-radius: 50px;
     text-align: center;
+    -moz-box-shadow:-0px -0px 4px #d7d7d7;
+    -webkit-box-shadow:-0px -0px 4px #d7d7d7;
+    box-shadow:-0px -0px 4px #d7d7d7;
   }
 }
