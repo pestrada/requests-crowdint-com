@@ -3,7 +3,41 @@ header{
   background: url(/assets/header.png);
   height: 337px;
   position:relative;
-  width: 100%;
+  z-index: 1;
+  width: 985px;
+  #crowd-c{
+    display:block;
+    margin:0 auto;
+    height:85px;
+    position: relative;
+    top: 24px;
+    text-align:center;
+    width:85px;
+    &:hover .glowing{
+      -webkit-transition: all 1s linear;
+      -o-transition: all 1s linear;
+      -moz-transition: all 1s linear;
+      -ms-transition: all 1s linear;
+      transition: all 1s linear;
+      -webkit-box-shadow: 0 0 63px 36px #fff;
+      -moz-box-shadow: 0 0 63px 45px #fff;
+      -o-box-shadow: 0 0 63px 36px #fff;
+      -ms-box-shadow: 0 0 63px 36px #fff;
+      box-shadow: 0 0 63px 36px #fff;
+    }
+  }
+  .glowing{
+    -webkit-transition: all 3s linear;
+    -o-transition: all 3s linear;
+    -moz-transition: all 3s linear;
+    -ms-transition: all 3s linear;
+    transition: all 3s linear;
+    display:block;
+    left:42.5px;
+    position:absolute;
+    top:42.5px;
+    width:1px;
+  }
 }
 .main{
   background: url(/assets/bkg.png);
@@ -96,9 +130,9 @@ header{
   position:absolute;
   width:100%;
   textarea, a{
-    -moz-box-shadow: 0px 0px 10px #aaa;
-    -webkit-box-shadow: 0px 0px 10px #aaa;
-    box-shadow: 0px 0px 10px #aaa;
+    -moz-box-shadow: 0px 0px 5px #aaa;
+    -webkit-box-shadow: 0px 0px 5px #aaa;
+    box-shadow: 0px 0px 5px #aaa;
   }
   > *{
     display:inline-block;
@@ -108,9 +142,9 @@ header{
   textarea{
     border-radius:50px;
     border:2px solid #f6f6f6;
-    -moz-box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
-    -webkit-box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
-    box-shadow:0px 0px 10px #aaa, inset -0px -0px 10px #aaa;
+    -moz-box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
+    -webkit-box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
+    box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
     font-size:10px;
     height:12px;
     padding:10px 5px 10px 50px;
@@ -135,6 +169,10 @@ header{
   padding-top:10px;
   text-align:center;
   width:90px;
+  &:hover{
+    background:#D8D8D8;
+    color:#A5A5A5;
+  }
 }
 // ************************************************** Footer
 .footer{

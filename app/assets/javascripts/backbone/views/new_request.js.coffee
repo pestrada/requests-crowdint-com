@@ -41,3 +41,4 @@ class App.Views.NewRequest extends Backbone.View
     $("#demo-htmlselect").ddslick
       width: "55px"
       enableKeyboard: false
+

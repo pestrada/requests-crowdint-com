@@ -91,7 +91,7 @@
 	}
 	.dd-options li { 
 		margin:0px;
-		padding:0px;
+		padding:5px;
 	}
 	.dd-option { 
 		padding:5px;
@@ -137,9 +137,7 @@
 	}
 	.dd-option-image, .dd-selected-image { 
 		vertical-align:middle; 
-		float:left;
     height:25px;
-		margin-right:5px; 
 		max-width:64px;
 	}
 	.dd-image-right { 

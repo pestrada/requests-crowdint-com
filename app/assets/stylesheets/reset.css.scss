@@ -61,3 +61,10 @@ ul{
   -moz-box-shadow: 0 2px 1px -1px #ddd;;
   box-shadow: 0 2px 1px -1px #ddd;
 }
+.fixedHeader{
+  position:fixed;
+  top:-235px;
+}
+.marginToClearHeader{
+  margin-top:363px;
+}
