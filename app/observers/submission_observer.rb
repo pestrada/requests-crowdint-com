@@ -1,3 +1,15 @@
+class AsyncNotifier
+  include Celluloid
+
+  def initialize(notification)
+    @notification = notification
+  end
+
+  def deliver
+    @notification.deliver
+  end
+end
+
 class SubmissionObserver < ActiveRecord::Observer
   observe VotingApp::Request
 
@@ -10,7 +22,8 @@ class SubmissionObserver < ActiveRecord::Observer
   end
 
   def notify_created(notification)
-    Notifier.new_request(notification.submission).deliver
+    @notification = Notifier.new_request(notification.submission)
+    AsyncNotifier.new(@notification).future(:deliver)
   end
 
   def notify_liked(notification)
