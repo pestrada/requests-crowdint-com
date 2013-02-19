@@ -1,39 +1,33 @@
-class AsyncNotifier
-  include Celluloid
-
-  def initialize(notification)
-    @notification = notification
-  end
-
-  def deliver
-    @notification.deliver
-  end
-end
+require 'async_job'
 
 class SubmissionObserver < ActiveRecord::Observer
   observe VotingApp::Request
 
   def notify_accepted(notification)
-    Notifier.request_accepted(notification.submission).deliver
+    @notification = Notifier.request_accepted(notification.submission)
+    AsyncJob.new(@notification).future(:deliver)
   end
 
   def notify_completed(notification)
-    Notifier.request_completed(notification.submission).deliver
+    @notification = Notifier.request_completed(notification.submission)
+    AsyncJob.new(@notification).future(:deliver)
   end
 
   def notify_created(notification)
     @notification = Notifier.new_request(notification.submission)
-    AsyncNotifier.new(@notification).future(:deliver)
+    AsyncJob.new(@notification).future(:deliver)
   end
 
   def notify_liked(notification)
   end
 
   def notify_promoted(notification)
-    Notifier.request_promoted(notification.submission).deliver
+    @notification = Notifier.request_promoted(notification.submission)
+    AsyncJob.new(@notification).future(:deliver)
   end
 
   def notify_rejected(notification)
-    Notifier.request_rejected(notification.submission).deliver
+    @notification = Notifier.request_rejected(notification.submission)
+    AsyncJob.new(@notification).future(:deliver)
   end
 end
