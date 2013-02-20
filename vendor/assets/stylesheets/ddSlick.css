@@ -35,10 +35,10 @@
 	}
 	.dd-selected { 
 		border-radius:50px;
+    font-weight:bold;
 		overflow:hidden; 
 		display:block; 
 		padding:0;
-		font-weight:bold;
 	}
 	.dd-pointer { 
 		width:0; 
@@ -138,6 +138,8 @@
 	.dd-option-image, .dd-selected-image { 
 		vertical-align:middle; 
     height:25px;
+    position: relative;
+    top: 1px;
 		max-width:64px;
 	}
 	.dd-image-right { 
