@@ -32,11 +32,11 @@ Then /^I should see the request "(.*?)" in the promoted list$/ do |request|
 end
 
 Given /^a request "(.*?)" exists$/ do |description|
-  Request.create description: description, user_id: User.create.id
+  Request.create description: description, user_id: User.create.id, category: 'office'
 end
 
 Given /^a promoted request "(.*?)" exists$/ do |description|
-  s = Request.create description: description, user_id: User.create.id
+  s = Request.create description: description, user_id: User.create.id, category: 'office'
   s.promote
 end
 
@@ -52,7 +52,7 @@ Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
 end
 
 Given /^a request "(.*?)" owned by me exists$/ do |description|
-  Request.create description: description, user_id: User.first.id
+  Request.create description: description, user_id: User.first.id, category: 'office'
 end
 
 Given /^I am logged in as admin$/ do
