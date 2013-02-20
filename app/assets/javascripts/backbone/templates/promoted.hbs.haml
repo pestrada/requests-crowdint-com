@@ -4,8 +4,8 @@
 .state
   .date
     {{ this.created_at }}
-  .mood-state
-    {{ this.mood }}
+  .category-name
+    {{ this.category }}
   .comments
   {{#unless this.isAdmin}}
   %div{ class: 'promoted' }

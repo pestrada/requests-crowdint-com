@@ -1,12 +1,12 @@
-- cat = "{{ this.mood }}"
-.mood
+- cat = "{{ this.category }}"
+.category-img
   = image_tag "icons/#{cat}.png"
 .description
   %p
     {{ this.description }}
   .info
     .category-name
-      {{ this.mood }}
+      {{ this.category }}
     .time
       {{ this.created_at }}
     .owner
