@@ -20,7 +20,7 @@ When /^I submit the request$/ do
 end
 
 Then /^I should see the request "(.*?)" in the submitted list$/ do |request|
-  within '.submission-list .submissions' do
+  within '.submission-list .submissions-l' do
     have_content request
   end
 end
@@ -32,11 +32,11 @@ Then /^I should see the request "(.*?)" in the promoted list$/ do |request|
 end
 
 Given /^a request "(.*?)" exists$/ do |description|
-  Request.create description: description
+  Request.create description: description, user_id: User.create.id
 end
 
 Given /^a promoted request "(.*?)" exists$/ do |description|
-  s = Request.create description: description
+  s = Request.create description: description, user_id: User.create.id
   s.promote
 end
 
@@ -46,7 +46,7 @@ end
 
 Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
   request = Request.find_by_description request
-  within ".submission-list .submissions li.submission-#{request.id} .votes" do
+  within ".submission-list .submissions-l li.submission-#{request.id} .votes" do
     have_content expected_count
   end
 end
