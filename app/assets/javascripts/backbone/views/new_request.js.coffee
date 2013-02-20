@@ -9,7 +9,7 @@ class App.Views.NewRequest extends Backbone.View
 
   render: ->
     $('header').append(@$el.html(@template))
-    @createMoodDropdown()
+    @createCategoriesDropdown()
 
   show: ->
     @$el.show()
@@ -28,16 +28,16 @@ class App.Views.NewRequest extends Backbone.View
 
   add_new_submission: (description)->
     textarea = @$el.find('#new_submission')
-    mood = $("#demo-htmlselect").data('ddslick').selectedData.value
+    category = $("#demo-htmlselect").data('ddslick').selectedData.value
     description = textarea.val()
     textarea.val('')
-    request = new App.Models.Request({ description: description, mood: mood })
+    request = new App.Models.Request({ description: description, category: category })
     request.save {},
       success: =>
         @collection.add request, { silent: true }
         @collection.trigger 'add-new', request
 
-  createMoodDropdown: ->
+  createCategoriesDropdown: ->
     $("#demo-htmlselect").ddslick
       width: "55px"
       enableKeyboard: false
