@@ -54,3 +54,19 @@ end
 Given /^a request "(.*?)" owned by me exists$/ do |description|
   Request.create description: description, user_id: User.first.id
 end
+
+Given /^I am logged in as admin$/ do
+  visit google_apps_sign_in_path
+  User.first.update_column :email, 'admin@example.com'
+  User.first.update_column :admin, true
+end
+
+When /^I accept the "(.*?)" request$/ do |request|
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/a[@class='accept']").click
+end
+
+Then /^I should see the "(.*?)" request accepted$/ do |request|
+  expect do
+    find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/div[@class='accepted']")
+  end.to_not raise_error Capybara::ElementNotFound
+end
