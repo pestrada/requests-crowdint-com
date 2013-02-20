@@ -1,5 +1,6 @@
+- cat = "{{ this.mood }}"
 .mood
-  = image_tag "icons/oficina.png"
+  = image_tag "icons/#{cat}.png"
 .description
   %p
     {{ this.description }}

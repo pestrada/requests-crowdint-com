@@ -14,11 +14,11 @@ header{
     text-align:center;
     width:85px;
     &:hover .glowing{
-      -webkit-transition: all 1s linear;
-      -o-transition: all 1s linear;
-      -moz-transition: all 1s linear;
-      -ms-transition: all 1s linear;
-      transition: all 1s linear;
+      -webkit-transition: all .5s linear;
+      -o-transition: all .5s linear;
+      -moz-transition: all .5s linear;
+      -ms-transition: all .5s linear;
+      transition: all .5s linear;
       -webkit-box-shadow: 0 0 63px 36px #fff;
       -moz-box-shadow: 0 0 63px 45px #fff;
       -o-box-shadow: 0 0 63px 36px #fff;
