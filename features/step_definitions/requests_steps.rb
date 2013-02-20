@@ -40,6 +40,12 @@ Given /^a promoted request "(.*?)" exists$/ do |description|
   s.promote
 end
 
+Given /^an accepted "(.*?)" request exists$/ do |description|
+  s = Request.create description: description, user_id: User.create.id, category: 'office'
+  s.promote
+  s.accept
+end
+
 When /^I up vote the request "(.*?)"$/ do |request|
   find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']/a[@class='like']").click
 end
@@ -69,6 +75,10 @@ When /^I reject the "(.*?)" request$/ do |request|
   find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/a[@class='reject']").click
 end
 
+When /^I complete the "(.*?)" request$/ do |request|
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/a[@class='complete']").click
+end
+
 Then /^I should see the "(.*?)" request accepted$/ do |request|
   expect do
     find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/div[@class='accepted']")
@@ -78,5 +88,11 @@ end
 Then /^I should see the "(.*?)" request rejected/ do |request|
   expect do
     find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/div[@class='rejected']")
+  end.to_not raise_error Capybara::ElementNotFound
+end
+
+Then /^I should see the "(.*?)" request completed/ do |request|
+  expect do
+    find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/div[@class='done']")
   end.to_not raise_error Capybara::ElementNotFound
 end
