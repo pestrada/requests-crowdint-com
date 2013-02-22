@@ -9,6 +9,7 @@ class App.Views.Submitted extends Backbone.View
 
   events:
     'click .like': 'like'
+    'keyup .new_comment' : 'comment'
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
@@ -16,6 +17,7 @@ class App.Views.Submitted extends Backbone.View
     @model.on 'change:votes', @updateVotes, @
     @model.on 'promoted', @promoteRequest, @
     @model.on 'remove', @remove, @
+    @model.on 'commented', @addComment, @
 
   render: ->
     json = @model.toJSON()
@@ -42,3 +44,11 @@ class App.Views.Submitted extends Backbone.View
   remove: ->
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
+
+  comment: (e)->
+    e.preventDefault()
+    if e.keyCode is 13
+      @model.comment(e.target.value)
+
+  addComment: ()->
+    @render()

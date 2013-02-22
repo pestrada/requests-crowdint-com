@@ -1,0 +1,7 @@
+.comments-form
+  %textarea{ name: 'new_comment', class: 'new_comment', placeholder: 'You comment here' }
+  %ul
+    {{#each this.comments}}
+    %li
+      {{> backbone/templates/_comment}}
+    {{/each}}

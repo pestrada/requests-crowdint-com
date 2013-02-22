@@ -119,8 +119,7 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 	}
 	.dd-selected-description-truncated { 
-		text-overflow: ellipsis; 
-		white-space:nowrap;
+		display:none;
 	}
 	.dd-option-selected {
 		background: #c6e1ec !important;

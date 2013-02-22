@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/crowdint/voting_engine.git
-  revision: 712252f5e4893ae08b04b5031b046ed513dcfe58
+  revision: 594572ce2cb5551de8b7aa63e45ddad35b11e3d3
   specs:
     voting_app (0.0.1)
       acts_as_votable (~> 0.5.0)
