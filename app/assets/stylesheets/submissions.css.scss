@@ -10,21 +10,19 @@
       display:inline-block;
       vertical-align:top;
       width: 382px;
-      padding: 0 10px;
+      padding: 0 20 0 0px;
       position: relative;
       height: 100%;
     }
     .info{
-      bottom:0;
-      position:absolute;
+      padding-left:40px;
+      overflow:hidden;
       & > div{
         float:left;
         font-size:11px;
-      }
-      & > div:not(:last-child):not(:first-child){
         padding:0 5px;
-        margin:0 5px;
-        border-left:1px solid #ccc;
+      }
+      & > div:not(:last-child){
         border-right:1px solid #ccc;
       }
     }
@@ -43,6 +41,10 @@
     }
     .owner{
 
+    }
+    .comments-count{
+      color:#F19000;
+      cursor:pointer;
     }
     h2{
       color:#F19000;
@@ -87,5 +89,24 @@
       background:#222;
       color:#7bc2c2;
     }
+  }
+}
+
+.comments-area{
+  padding-left:40px;
+  li:first-child{
+    border-top:1px dashed #ccc;
+  }
+  .comments-form{
+    margin-top:16px;
+  }
+  .new_comment{
+    border: none;
+    resize:none;
+    width:464px;
+  }
+  ul{
+    max-height: 275px;
+    overflow-y: scroll;
   }
 }

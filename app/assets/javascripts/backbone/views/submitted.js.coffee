@@ -10,6 +10,7 @@ class App.Views.Submitted extends Backbone.View
   events:
     'click .like': 'like'
     'keyup .new_comment' : 'comment'
+    'click .comments-count' : 'show_comments'
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
@@ -52,3 +53,6 @@ class App.Views.Submitted extends Backbone.View
 
   addComment: ()->
     @render()
+
+  show_comments: ()->
+    @$el.find('.comments-area').toggleClass('hidden');

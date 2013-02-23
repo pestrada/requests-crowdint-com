@@ -1,22 +1,28 @@
 - cat = "{{ this.category }}"
+- comments = "{{ this.comments.length }}"
+//- comment-icon = comments > 0 ? '' : ''
 .category-img
   = image_tag "icons/#{cat}.png"
 .description
   %p
     {{ this.description }}
-  .info
-    .category-name
-      {{ this.category }}
-    .time
-      {{ this.created_at }}
-    .owner
-      {{#remove_domain}}{{this.email}}{{/remove_domain}}
 
 .vote-controls
   .votes
     %span {{ this.votes }}
     %span VOTES
   = link_to '+1', '#', class: 'like'
+
+.info
+  .category-name
+    {{ this.category }}
+  .time
+    {{ this.created_at }}
+  .owner
+    {{#remove_domain}}{{this.email}}{{/remove_domain}}
+  .comments-count{title: 'show/hide comments'}
+    = image_tag "icons/comments-link.png"
+    = comments
 
 {{> backbone/templates/_comments}}
 
