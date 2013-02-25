@@ -37,8 +37,8 @@
 		border-radius:50px;
     font-weight:bold;
 		overflow:hidden; 
-		display:block; 
-		padding:0;
+		display:block;
+    padding: 4px 0;
 	}
 	.dd-pointer { 
 		width:0; 

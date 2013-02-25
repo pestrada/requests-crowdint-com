@@ -1,5 +1,4 @@
 - cat = "{{ this.category }}"
-- comments = "{{ this.comments.length }}"
 //- comment-icon = comments > 0 ? '' : ''
 .category-img
   = image_tag "icons/#{cat}.png"
@@ -22,7 +21,7 @@
     {{#remove_domain}}{{this.email}}{{/remove_domain}}
   .comments-count{title: 'show/hide comments'}
     = image_tag "icons/comments-link.png"
-    = comments
+    {{ this.comments.length}}
 
 .comments-area.hidden
 
