@@ -103,6 +103,10 @@ header{
       margin-top:6px;
       overflow:hidden;
     }
+    .comments-count{
+      color:#F19000;
+      cursor:pointer;
+    }
   }
 }
 // ************************************************** Lists
@@ -182,4 +186,23 @@ header{
 // ************************************************** Extra
 .loading{
   text-align:center;
+}
+// ************************************************** Comments
+.comments-area{
+  padding-left:40px;
+  li:first-child{
+    border-top:1px dashed #ccc;
+  }
+  .comments-form{
+    margin-top:16px;
+  }
+  .new_comment{
+    border: none;
+    resize:none;
+    width:464px;
+  }
+  ul{
+    max-height: 275px;
+    overflow-y: auto;
+  }
 }

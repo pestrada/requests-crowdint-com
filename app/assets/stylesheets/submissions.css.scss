@@ -42,10 +42,6 @@
     .owner{
 
     }
-    .comments-count{
-      color:#F19000;
-      cursor:pointer;
-    }
     h2{
       color:#F19000;
     }
@@ -89,24 +85,5 @@
       background:#222;
       color:#7bc2c2;
     }
-  }
-}
-
-.comments-area{
-  padding-left:40px;
-  li:first-child{
-    border-top:1px dashed #ccc;
-  }
-  .comments-form{
-    margin-top:16px;
-  }
-  .new_comment{
-    border: none;
-    resize:none;
-    width:464px;
-  }
-  ul{
-    max-height: 275px;
-    overflow-y: scroll;
   }
 }

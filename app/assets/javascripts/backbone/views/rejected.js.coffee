@@ -1,10 +1,15 @@
-class App.Views.Rejected extends Backbone.View
+class App.Views.Rejected extends App.Views.Request
   tagName: 'li'
 
   template: HandlebarsTemplates['backbone/templates/rejected']
 
+  events:
+    'keyup .new_comment' : 'comment'
+    'click .comments-count' : 'show_comments'
+
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")
+    @model.on 'commented', @addComment, @
 
   render: ->
     json = @model.toJSON()
@@ -12,4 +17,5 @@ class App.Views.Rejected extends Backbone.View
     _.extend json, { isAdmin: App.isAdmin, created_at: created_at }
     @$el.html(@template(json))
     @$el.fadeIn()
+    @renderComments()
     @

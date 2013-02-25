@@ -1,4 +1,4 @@
-class App.Views.Submitted extends Backbone.View
+class App.Views.Submitted extends App.Views.Request
 #  el: 'section.submission-list ul'
 
   tagName: 'li'
@@ -26,6 +26,7 @@ class App.Views.Submitted extends Backbone.View
     _.extend json, { created_at: time }
     @$el.html(@template(json))
     @$el.fadeIn()
+    @renderComments()
     @
 
   like: (e)->
@@ -46,13 +47,3 @@ class App.Views.Submitted extends Backbone.View
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
 
-  comment: (e)->
-    e.preventDefault()
-    if e.keyCode is 13
-      @model.comment(e.target.value)
-
-  addComment: ()->
-    @render()
-
-  show_comments: ()->
-    @$el.find('.comments-area').toggleClass('hidden');

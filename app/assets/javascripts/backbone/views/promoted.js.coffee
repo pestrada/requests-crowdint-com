@@ -1,4 +1,4 @@
-class App.Views.Promoted extends Backbone.View
+class App.Views.Promoted extends App.Views.Request
   tagName: 'li'
 
   template: HandlebarsTemplates['backbone/templates/promoted']
@@ -6,11 +6,15 @@ class App.Views.Promoted extends Backbone.View
   events:
     'click .accept'  : 'accept'
     'click .reject'  : 'reject'
+    'keyup .new_comment' : 'comment'
+    'click .comments-count' : 'show_comments'
+
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")
     @model.on 'accepted', @acceptRequest, @
     @model.on 'rejected', @rejectRequest, @
+    @model.on 'commented', @addComment, @
 
   render: ->
     json = @model.toJSON()
@@ -18,6 +22,7 @@ class App.Views.Promoted extends Backbone.View
     _.extend json, { isAdmin: App.isAdmin, created_at: created_at }
     @$el.html(@template(json))
     @$el.fadeIn()
+    @renderComments()
     @
 
   acceptRequest: ->
@@ -37,3 +42,4 @@ class App.Views.Promoted extends Backbone.View
     e.preventDefault()
     @model.reject()
     @undelegateEvents()
+
