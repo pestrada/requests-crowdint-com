@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: git://github.com/supherman/acts_as_votable.git
-  revision: 3973f2f1be14f5fe155d676a2ff198e21094f94d
+  revision: 861851f84c73daaf3bb3ff13010bb1274dad656a
   branch: sti-voter
   specs:
     acts_as_votable (0.5.0)
@@ -69,7 +69,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.4.0)
+    coffee-script-source (1.5.0)
     crowdint_auth (0.0.3)
       devise
       omniauth-google-apps
@@ -112,14 +112,14 @@ GEM
     haml_assets (0.2.1)
       haml
       tilt
-    handlebars_assets (0.11.0)
+    handlebars_assets (0.12.0)
       execjs (>= 1.2.9)
       sprockets (>= 2.0.3)
       tilt
     hashie (1.2.0)
     hike (1.2.1)
     http_parser.rb (0.5.3)
-    i18n (0.6.1)
+    i18n (0.6.2)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -202,7 +202,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.10.0)
     rake (10.0.3)
-    rdoc (3.12.1)
+    rdoc (3.12.2)
       json (~> 1.4)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
@@ -223,7 +223,7 @@ GEM
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
     rubyzip (0.9.9)
-    sass (3.2.5)
+    sass (3.2.6)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
