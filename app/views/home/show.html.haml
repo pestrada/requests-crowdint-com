@@ -1,12 +1,6 @@
 :javascript
-  var submitted = #{Rabl::Renderer.json(@submitted, 'home/requests', :view_path => 'app/views')};
-  var promoted = #{Rabl::Renderer.json(@promoted, 'home/requests', :view_path => 'app/views')};
-
-  Handlebars.registerHelper('remove_domain', function(options) {
-    var email = options.fn(this);
-    var idx = email.indexOf('@');
-    return email.substring(0, idx);
-  });
+  var submitted = #{Rabl::Renderer.json(@submitted, 'home/requests', :view_path => 'app/views', scope: self)};
+  var promoted = #{Rabl::Renderer.json(@promoted, 'home/requests', :view_path => 'app/views', scope: self)};
 
   App.submitted_list = new App.Collections.Submitted();
   App.promoted_list  = new App.Collections.Promoted();

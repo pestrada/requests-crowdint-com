@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/crowdint/voting_engine.git
-  revision: 594572ce2cb5551de8b7aa63e45ddad35b11e3d3
+  revision: 63ada29e3e3b66a9952e702f3762d4bc24e8ce50
   specs:
     voting_app (0.0.1)
       acts_as_votable (~> 0.5.0)
@@ -252,7 +252,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unicorn (4.6.1)
+    unicorn (4.6.2)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)

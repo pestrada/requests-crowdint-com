@@ -1,5 +1,5 @@
 - cat = "{{ this.category }}"
-//- comment-icon = comments > 0 ? '' : ''
+- can_vote = "{{can_vote this.can_vote}}"
 .category-img
   = image_tag "icons/#{cat}.png"
 .description
@@ -10,7 +10,7 @@
   .votes
     %span {{ this.votes }}
     %span VOTES
-  = link_to '+1', '#', class: 'like'
+  = link_to '+1', '#', class: "#{can_vote} like"
 
 .info
   .category-name
@@ -18,7 +18,7 @@
   .time
     {{ this.created_at }}
   .owner
-    {{#remove_domain}}{{this.email}}{{/remove_domain}}
+    {{remove_domain this.email}}
   .comments-count{title: 'show/hide comments'}
     = image_tag "icons/comments-link.png"
     {{ this.comments.length}}

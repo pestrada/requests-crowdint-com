@@ -70,20 +70,28 @@
     }
   }
   .like{
-    color:#222;
     display: block;
     font-size: 18px;
     padding:6px 0;
     border: 3px solid #fff;
-    background: #7bc2c2;
     border-radius: 50px;
     text-align: center;
     -moz-box-shadow:-0px -0px 4px #d7d7d7;
     -webkit-box-shadow:-0px -0px 4px #d7d7d7;
     box-shadow:-0px -0px 4px #d7d7d7;
+  }
+  .can-vote{
+    background: #7bc2c2;
+    color:#222;
     &:hover{
       background:#222;
       color:#7bc2c2;
     }
+  }
+  .cant-vote{
+    background: #7bc2c2;
+    color:#222;
+    opacity:.1;
+    cursor:default;
   }
 }
