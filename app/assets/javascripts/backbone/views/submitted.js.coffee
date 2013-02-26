@@ -1,4 +1,4 @@
-class App.Views.Submitted extends Backbone.View
+class App.Views.Submitted extends App.Views.Request
 #  el: 'section.submission-list ul'
 
   tagName: 'li'
@@ -8,13 +8,14 @@ class App.Views.Submitted extends Backbone.View
   template: HandlebarsTemplates['backbone/templates/submitted']
 
   events:
-    'click .like': 'like'
+    'click .like.can-vote': 'like'
     'keyup .new_comment' : 'comment'
     'click .comments-count' : 'show_comments'
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
     @$el.attr('id', "request-#{@model.id}")
+    @can_vote = @model.get('can_vote')
     @model.on 'change:votes', @updateVotes, @
     @model.on 'promoted', @promoteRequest, @
     @model.on 'remove', @remove, @
@@ -23,18 +24,20 @@ class App.Views.Submitted extends Backbone.View
   render: ->
     json = @model.toJSON()
     time = moment(json.created_at).add('day', 7).fromNow();
-    _.extend json, { created_at: time }
+    _.extend json, { created_at: time, can_vote: @can_vote }
     @$el.html(@template(json))
     @$el.fadeIn()
+    @renderComments()
     @
 
   like: (e)->
     e.preventDefault()
-    @model.like()
-    @undelegateEvents()
+    @model.like() unless @liked
 
   updateVotes: (model)->
+    @can_vote = false
     @$el.find('.votes span:first-child').html(model.get('votes'))
+    @$el.find('.like').removeClass('can-vote').addClass('cant-vote')
 
   promoteRequest: ->
     @model.collection.remove(@model)
@@ -46,13 +49,3 @@ class App.Views.Submitted extends Backbone.View
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
 
-  comment: (e)->
-    e.preventDefault()
-    if e.keyCode is 13
-      @model.comment(e.target.value)
-
-  addComment: ()->
-    @render()
-
-  show_comments: ()->
-    @$el.find('.comments-area').toggleClass('hidden');

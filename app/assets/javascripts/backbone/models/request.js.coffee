@@ -3,9 +3,10 @@ class App.Models.Request extends Backbone.Model
 
   defaults:
     votes: 0
+    comments: []
 
   validate: ->
-    if @get('description') is ''
+    if @get('description') is '' || @get('description').length > 140
       return 'Validation Error'
 
   like: ->

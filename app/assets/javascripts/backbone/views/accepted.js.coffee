@@ -1,14 +1,17 @@
-class App.Views.Accepted extends Backbone.View
+class App.Views.Accepted extends App.Views.Request
   tagName: 'li'
 
   template: HandlebarsTemplates['backbone/templates/accepted']
 
   events:
     'click .complete': 'complete'
+    'keyup .new_comment' : 'comment'
+    'click .comments-count' : 'show_comments'
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")
     @model.on('completed', @completeRequest, @)
+    @model.on 'commented', @addComment, @
 
   render: ->
     json = @model.toJSON()
@@ -16,6 +19,7 @@ class App.Views.Accepted extends Backbone.View
     _.extend json, { isAdmin: App.isAdmin, created_at: created_at }
     @$el.html(@template(json))
     @$el.fadeIn()
+    @renderComments()
     @
 
   completeRequest: ->

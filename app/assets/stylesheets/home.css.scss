@@ -103,6 +103,10 @@ header{
       margin-top:6px;
       overflow:hidden;
     }
+    .comments-count{
+      color:#F19000;
+      cursor:pointer;
+    }
   }
 }
 // ************************************************** Lists
@@ -129,6 +133,14 @@ header{
   overflow:visible;
   position:absolute;
   width:100%;
+  .char-counter{
+    border-right:1px solid #ccc;
+    display:inline-block;
+    left: 187px;
+    position:absolute;
+    top: 10px;
+    width:40px;
+  }
   textarea, a{
     -moz-box-shadow: 0px 0px 5px #aaa;
     -webkit-box-shadow: 0px 0px 5px #aaa;
@@ -182,4 +194,23 @@ header{
 // ************************************************** Extra
 .loading{
   text-align:center;
+}
+// ************************************************** Comments
+.comments-area{
+  padding-left:40px;
+  li:first-child{
+    border-top:1px dashed #ccc;
+  }
+  .comments-form{
+    margin-top:16px;
+  }
+  .new_comment{
+    border: none;
+    resize:none;
+    width:464px;
+  }
+  ul{
+    max-height: 275px;
+    overflow-y: auto;
+  }
 }

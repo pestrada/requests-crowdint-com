@@ -14,6 +14,15 @@
   .description{
     height:79px;
   }
+  .comments-area{
+    padding:0;
+    ul{
+      border:none;
+    }
+    .new_comment{
+      margin-left:20px;
+    }
+  }
 }
 /***************************************************States*/
 .state{

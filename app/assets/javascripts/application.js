@@ -24,5 +24,6 @@
 //= require backbone_datalink
 //= require pusher
 //= require backpusher
+//= require jquery.gritter.min
 //= require backbone/requests_crowdint_com
 //= require_tree .

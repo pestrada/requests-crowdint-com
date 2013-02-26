@@ -6,7 +6,9 @@
     {{ this.created_at }}
   .category-name
     {{ this.category }}
-  .comments
+  .comments-count{title: 'show/hide comments'}
+    = image_tag "icons/comments-link.png"
+    {{ this.comments.length }}
   {{#unless this.isAdmin}}
   %div{ class: 'accepted' }
   {{/unless}}
@@ -17,3 +19,5 @@
   = link_to 'Complete', '#', {class: 'complete', title: 'Mark as done'}
   %div{ class: 'accepted' }
 {{/if}}
+
+.comments-area.hidden
