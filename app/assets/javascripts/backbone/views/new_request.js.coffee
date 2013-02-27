@@ -49,6 +49,7 @@ class App.Views.NewRequest extends Backbone.View
 
   showMessage: (title, text, className ) ->
     $.gritter.add
+      sticky: true
       title: title
       text: text
       image: '/assets/transparent.png'
