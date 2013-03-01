@@ -18,11 +18,9 @@
   .time
     {{ this.created_at }}
   .owner
-    {{remove_domain this.email}}
+    {{this.name}}
   .comments-count{title: 'show/hide comments'}
     = image_tag "icons/comments-link.png"
     {{ this.comments.length}}
 
 .comments-area.hidden
-
-

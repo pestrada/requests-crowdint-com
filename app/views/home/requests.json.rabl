@@ -1,6 +1,6 @@
 collection @requests
 
-attributes :id, :description, :state, :created_at, :accepted_at, :category, :email
+attributes :id, :description, :state, :created_at, :accepted_at, :category, :name
 
 node(:votes) { |s| s.cached_votes_total }
 
