@@ -4,7 +4,6 @@
   width:510px;
   li{
     border-bottom:1px dashed #ccc;
-    padding:16px 0 16px 0;
     position:relative;
     .description{
       display:inline-block;
@@ -14,33 +13,12 @@
       position: relative;
       height: 100%;
     }
-    .info{
-      padding-left:40px;
-      overflow:hidden;
-      & > div{
-        float:left;
-        font-size:11px;
-        padding:0 5px;
-      }
-      & > div:not(:last-child){
-        border-right:1px solid #ccc;
-      }
-    }
     .category-img{
       display:inline-block;
       vertical-align:bottom;
       width:40px;
       float:none;
       position:relative;
-    }
-    .time{
-
-    }
-    .category-name{
-
-    }
-    .owner{
-
     }
     h2{
       color:#F19000;

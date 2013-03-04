@@ -102,6 +102,7 @@ header{
       //background:#fff;
       margin-top:6px;
       overflow:hidden;
+      padding:16px 0 16px 0;
     }
     .comments-count{
       color:#F19000;
@@ -114,6 +115,18 @@ header{
   margin-top:30px;
   p{
     font-size:12px;
+  }
+}
+.info{
+  padding-left:40px;
+  overflow:hidden;
+  & > div{
+    float:left;
+    font-size:11px;
+    padding:0 5px;
+  }
+  & > div:not(:last-child){
+    border-right:1px solid #ccc;
   }
 }
 .category-img{
@@ -214,6 +227,7 @@ header{
     overflow-y: auto;
   }
   .info{
+    margin-top:10px;
     padding-left:0 !important;
   }
 }

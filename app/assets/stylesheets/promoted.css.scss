@@ -9,10 +9,13 @@
   li{
     padding:18px 0 0px;
     position:relative;
-    border-bottom:1px dashed #ccc;;
+    border-bottom:1px dashed #ccc;
   }
   .description{
     height:79px;
+  }
+  .info{
+    margin-bottom:10px;
   }
   .comments-area{
     padding:0;
@@ -22,6 +25,9 @@
     .new_comment{
       margin-left:20px;
     }
+    .info{
+      margin-bottom:0;
+    }
   }
   .info{
     font-size:11px;
@@ -29,16 +35,6 @@
   }
 }
 /***************************************************States*/
-.state{
-  border-radius:5px;
-  display:inline-block;
-  margin-bottom:10px;
-  > div{
-    float:left;
-    font-size:11px;
-    margin-right:10px;
-  }
-}
 .promoted{
   &:after{
     content:'Waiting for reply';
@@ -76,7 +72,6 @@
 /***************************************************Admin actions*/
 .actions{
   margin-left:5px;
-  margin-bottom:10px;
   > *{
     display:inline-block;
     vertical-align:middle;
