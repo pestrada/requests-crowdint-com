@@ -23,7 +23,8 @@ class App.Views.Submitted extends App.Views.Request
 
   render: ->
     json = @model.toJSON()
-    time = moment(json.created_at).add('day', 7).fromNow();
+    @formatCommentsTime(json.comments)
+    time = moment(json.created_at).add('day', 7).fromNow()
     _.extend json, { created_at: time, can_vote: @can_vote }
     @$el.html(@template(json))
     @$el.fadeIn()
@@ -48,4 +49,6 @@ class App.Views.Submitted extends App.Views.Request
   remove: ->
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
+
+
 

@@ -16,3 +16,12 @@ class App.Views.Request extends Backbone.View
 
   show_comments: ()->
     @$el.find('.comments-area').toggleClass('hidden')
+
+  formatCommentsTime: (comments) ->
+    for comment in comments
+      time = moment(comment.created_at).fromNow()
+      _.extend comment, {created_at: time}
+
+  formatProcessedRequest: (json)->
+    time = moment(json.created_at).format("MMM Do YY")
+    _.extend json, { isAdmin: App.isAdmin, created_at: time }

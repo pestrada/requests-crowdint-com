@@ -18,8 +18,8 @@ class App.Views.Promoted extends App.Views.Request
 
   render: ->
     json = @model.toJSON()
-    created_at = moment(json.created_at).format("MMM Do YY")
-    _.extend json, { isAdmin: App.isAdmin, created_at: created_at }
+    @formatProcessedRequest(json)
+    @formatCommentsTime(json.comments)
     @$el.html(@template(json))
     @$el.fadeIn()
     @renderComments()
