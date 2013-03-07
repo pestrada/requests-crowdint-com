@@ -4,7 +4,7 @@
 		position:relative; 
 		margin:0;
 		cursor:pointer;
-	}
+  }
 	.dd-select a { 
 		text-decoration:none;
 		font-weight: bold;
@@ -17,7 +17,7 @@
 		background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
 		cursor:pointer;
-	}
+  }
 	.dd-desc {
     clear:both;
 		color:#666; 
@@ -27,19 +27,19 @@
 		font-weight:normal; 
 		line-height: 1.4em;
 		cursor:pointer;
-	}
+  }
 	.dd-option-selected .dd-desc {
 		color: #3d7489;
 		text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
 		cursor:pointer;
-	}
+  }
 	.dd-selected { 
 		border-radius:50px;
     font-weight:bold;
 		overflow:hidden; 
 		display:block;
     padding: 4px 0;
-	}
+  }
 	.dd-pointer { 
 		width:0; 
 		height:0; 
@@ -47,18 +47,18 @@
 		right:2px;
 		top:20px;
 		margin-top:-3px;
-	}
+  }
 	.dd-pointer-down { 
 		border:solid 5px transparent; 
 		border-top:solid 5px #000;
 		cursor:pointer;
-	}
+  }
 	.dd-pointer-up {
 		border:solid 5px transparent !important; 
 		border-bottom:solid 5px #000 !important; 
 		margin-top:-8px;
 		cursor:pointer;
-	}
+  }
 	.dd-options { 
 		list-style:none; 
 		box-shadow:0px 1px 5px #ddd; 
@@ -72,7 +72,7 @@
 		overflow:visible;
 		box-shadow: 0px 0px 3px 3px rgba(155, 155, 155, 0.3);
 		background: #eaeaea !important;
-	}
+  }
 	.dd-options:before {
 		content: '';
 		position: absolute;
@@ -80,7 +80,7 @@
 		border-style: solid;
 		border-color: transparent transparent rgba(155, 155, 155, 0.3) transparent ;
 		top: -14px; right:8px;
-	}
+  }
 	.dd-options:after {
 		content: '';
 		position: absolute;
@@ -88,11 +88,11 @@
 		border-style: solid;
 		border-color: transparent transparent #eaeaea transparent ;
 		top: -12px; right:8px;
-	}
+  }
 	.dd-options li { 
 		margin:0px;
 		padding:5px;
-	}
+  }
 	.dd-option { 
 		padding:5px;
 		margin:0px;
@@ -106,7 +106,7 @@
 		-ms-transition: all 0.25s ease-in-out; 
 		transition: all 0.25s ease-in-out;
 		cursor:pointer;
-	}
+  }
 	.dd-option:hover, .dd-option-hover, .dd-option-selected.dd-option-hover { 
 		background: #ffffff !important;
 		background: #ffffff !important;
@@ -117,10 +117,10 @@
 		background: -ms-linear-gradient(top, #ffffff 1%,#ffffff 100%);
 		background: linear-gradient(top, #ffffff 1%,#ffffff 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
-	}
+  }
 	.dd-selected-description-truncated { 
 		display:none;
-	}
+  }
 	.dd-option-selected {
 		background: #c6e1ec !important;
 		background: -moz-linear-gradient(top, #c6e1ec 1%, #c6e1ec 100%);
@@ -131,26 +131,26 @@
 		background: linear-gradient(top, #c6e1ec 1%,#c6e1ec 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e1ec', endColorstr='#c6e1ec',GradientType=0 );		
 		color: #3d7489;
-		text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
-		box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
-	}
+		text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+		box-shadow: 0 0 0 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
+  }
 	.dd-option-image, .dd-selected-image { 
 		vertical-align:middle; 
     height:25px;
     position: relative;
     top: 1px;
 		max-width:64px;
-	}
+  }
 	.dd-image-right { 
 		float:right; 
 		margin-right:15px; 
 		margin-left:5px;
-	}
+  }
 	.dd-container { 
 		position:relative; 
-		margin:0px;
-	}​ 
-	.dd-selected-text { 
+		margin:0;
+  }
+	.dd-selected-text {
 		font-weight:bold;
 		cursor:pointer !important;
-	}​
+     }
