@@ -32,6 +32,9 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 ```
 
+### Environment variables for local development
+	export VOTES_LIMIT=10
+
 ### Run
 
 ```
