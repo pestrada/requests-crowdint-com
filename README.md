@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/crowdint/requests-crowdint-com.png?branch=master)](https://travis-ci.org/crowdint/requests-crowdint-com)
+[![Code Climate](https://codeclimate.com/github/crowdint/requests-crowdint-com.png)](https://codeclimate.com/github/crowdint/requests-crowdint-com)
 
 #Crowd-Requests
 
