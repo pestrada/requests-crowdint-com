@@ -4,7 +4,7 @@
 
 ###[http://requests.crowdint.com](http://requests.crowdint.com/)
 
-**Crowd-requests** is a web application created to give valuable feedback about the flaws, problems and things that could improve here @**CrowdInt** so we can fix them.
+**Crowd-requests** is a web application created to give valuable feedback about the flaws, problems and things that could improve here @ **CrowdInt** so we can fix them.
 
 Any member of the **CrowdInt** team can use the application and leave a **requests** about what he/she would like to see or change in the working environment (could be anything!).
 
