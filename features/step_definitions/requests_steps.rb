@@ -47,7 +47,7 @@ Given /^an accepted "(.*?)" request exists$/ do |description|
 end
 
 When /^I up vote the request "(.*?)"$/ do |request|
-  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']/a[@class='like']").click
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']").click
 end
 
 Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
