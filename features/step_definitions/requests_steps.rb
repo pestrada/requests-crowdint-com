@@ -21,13 +21,13 @@ end
 
 Then /^I should see the request "(.*?)" in the submitted list$/ do |request|
   within '.submission-list .submissions-l' do
-    have_content request
+    should have_content request
   end
 end
 
 Then /^I should see the request "(.*?)" in the promoted list$/ do |request|
   within '.promoted-list' do
-    have_content request
+    should have_content request
   end
 end
 
@@ -47,13 +47,17 @@ Given /^an accepted "(.*?)" request exists$/ do |description|
 end
 
 When /^I up vote the request "(.*?)"$/ do |request|
-  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']").click
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']/a[@class='can-vote like']").click
+end
+
+When /^I try to up vote the request "(.*?)"$/ do |request|
+  find(:xpath, "//li[contains(., '#{request}')]/div[@class='vote-controls']/a[@class='cant-vote like']").click
 end
 
 Then /^The "(.*?)" vote count should be (\d+)$/ do |request, expected_count|
   request = Request.find_by_description request
-  within ".submission-list .submissions-l li.submission-#{request.id} .votes" do
-    have_content expected_count
+  within ".submission-list .submissions-l li.submission-#{request.id} .votes span:first" do
+    should have_content expected_count
   end
 end
 
