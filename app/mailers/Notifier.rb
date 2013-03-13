@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   include Celluloid
 
   default from: 'requests@crowdint.com',
-          to: "retrospectus@crowdint.com"
+          to: ENV['EMAIL_LIST']
 
   def new_request(request)
     @request = request
