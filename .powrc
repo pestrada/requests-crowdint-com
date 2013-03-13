@@ -2,3 +2,4 @@ export VOTES_LIMIT=10
 export PUSHER_APP=37329
 export PUSHER_KEY=ba8d0a878fcb59255b42
 export PUSHER_SECRET=806f98269b5cdbb8a6ab
+export EMAIL_LIST=retrospectus@crowdint.com
