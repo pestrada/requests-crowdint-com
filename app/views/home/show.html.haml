@@ -8,11 +8,12 @@
   App.submitted_list.reset(submitted);
   App.promoted_list.reset(promoted);
 
-  App.votesLimit = #{Rails.application.config.votes_limit}
+  App.votesLimit = #{Rails.application.config.votes_limit};
 
-  App.isAdmin = #{current_user.admin?}
+  App.isAdmin = #{current_user.admin?};
+  App.current_user = "#{current_user.name}";
 
-  App.pusherKey = "#{Pusher.key}"
+  App.pusherKey = "#{Pusher.key}";
 
   $(function(){
     App.layout = new App.Views.Application();

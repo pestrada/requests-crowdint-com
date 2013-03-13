@@ -7,7 +7,7 @@ class App.Views.Application extends Backbone.View
     @initializePusher()
 
   render: ->
-    @$el.html(@template)
+    @$el.html(@template(App.current_user))
     App.form = new App.Views.NewRequest({ collection: App.submitted_list })
     App.form.render()
     @scrollCheck()

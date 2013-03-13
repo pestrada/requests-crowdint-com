@@ -93,6 +93,11 @@ header{
       }
     }
   }
+  .current_user{
+    float:left;
+    position: relative;
+    top: 20px;
+  }
   .lists{
     display:inline-block;
     margin-bottom: 3em;
