@@ -10,6 +10,7 @@ class App.Views.Request extends Backbone.View
       @model.comment(e.target.value)
 
   addComment: ()->
+    @formatCommentsTime(@model.toJSON().comments)
     @renderComments()
     list = @$el.find('.comments-area ul')
     list.scrollTop list.prop('scrollHeight')
