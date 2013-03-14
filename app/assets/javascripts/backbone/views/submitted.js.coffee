@@ -8,9 +8,11 @@ class App.Views.Submitted extends App.Views.Request
   template: HandlebarsTemplates['backbone/templates/submitted']
 
   events:
-    'click .like.can-vote': 'like'
-    'keyup .new_comment' : 'comment'
+    'click .like.can-vote'  : 'like'
+    'click .like.cant-vote'  : 'do_nothing'
     'click .comments-count' : 'show_comments'
+    'click .add_comment'    : 'comment_on_click'
+    'keyup .new_comment'    : 'comment_on_enter'
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")
@@ -49,6 +51,22 @@ class App.Views.Submitted extends App.Views.Request
   remove: ->
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
+
+  comment_on_enter: (e)->
+    e.preventDefault()
+    if e.keyCode is 13
+      @comment(e.target.value)
+    else
+      @$el.find('.char-counter').text(140 - @$el.find('.new_comment').val().length)
+
+  comment_on_click: (e)->
+    e.preventDefault()
+    value = @$el.find('.new_comment').val()
+    @comment(value)
+
+  do_nothing: (e)->
+    e.preventDefault()
+
 
 
 

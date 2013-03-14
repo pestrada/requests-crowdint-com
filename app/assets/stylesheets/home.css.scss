@@ -98,6 +98,10 @@ header{
     position: relative;
     top: 20px;
   }
+  .current_username{
+    color:#222;
+    font-weight:bold;
+  }
   .lists{
     display:inline-block;
     margin-bottom: 3em;
@@ -217,16 +221,47 @@ header{
 // ************************************************** Comments
 .comments-area{
   padding-left:40px;
+  li{
+    font-size:13px;
+  }
   li:first-child{
     border-top:1px dashed #ccc;
   }
+  .char-counter{
+    border-right:1px solid #ccc;
+    display:inline-block;
+    left: 10px;
+    position:absolute;
+    top: 10px;
+    width:33px;
+  }
   .comments-form{
     margin-top:16px;
+    position:relative;
   }
   .new_comment{
     border: none;
     resize:none;
-    width:464px;
+    border-radius:50px;
+    border:2px solid #f6f6f6;
+    -moz-box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
+    -webkit-box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
+    box-shadow:0px 0px 5px #aaa, inset -0px -0px 10px #aaa;
+    font-size:10px;
+    height:12px;
+    padding:10px 5px 10px 50px;
+    resize:none;
+    width:340px;
+  }
+  .add_comment{
+    background:url(/assets/icons/comment-for-button-white.png) #F19000 no-repeat;
+    background-position-x: 6px;
+    background-position-y: 8px;
+    border:3px solid #fff;
+    border-radius:50px;
+    display:inline-block;
+    height:30px;
+    width:30px;
   }
   ul{
     max-height: 275px;

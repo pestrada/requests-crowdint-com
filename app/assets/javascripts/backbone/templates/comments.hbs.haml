@@ -4,4 +4,7 @@
     {{> backbone/templates/_comment}}
   {{/each}}
 .comments-form
-  %textarea{ name: 'new_comment', class: 'new_comment', placeholder: 'Write a comment..' }
+  %span.char-counter
+    140
+  %textarea{ name: 'new_comment', class: 'new_comment', placeholder: 'Write a comment..', maxlength: "140" }
+  %a{class: 'add_comment', href:'#'}

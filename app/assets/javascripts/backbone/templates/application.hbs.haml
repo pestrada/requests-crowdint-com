@@ -8,7 +8,9 @@
   %section.lists
     %nav.fancy-border
       .current_user
-        Signed in as: {{this}}
+        Signed in as: 
+        %span.current_username
+          {{this}}
       %ul
         %li
           = link_to 'REQUEST BOX', '#'

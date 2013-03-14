@@ -4,10 +4,8 @@ class App.Views.Request extends Backbone.View
   renderComments: ->
     @$el.find('.comments-area').html(@commentsTemplate(@model.toJSON()))
 
-  comment: (e)->
-    e.preventDefault()
-    if e.keyCode is 13
-      @model.comment(e.target.value)
+  comment: (value)->
+    @model.comment(value)
 
   addComment: ()->
     @formatCommentsTime(@model.toJSON().comments)
