@@ -90,8 +90,7 @@
     width:17px;
     &.reject{
       background:url(/assets/icons/rejected-for-icon-white.png) no-repeat #D64826;
-      background-position-x: center;
-      background-position-y: 3px;
+      background-position: center center;
       &:not(.disabled-btn):hover{
         background-color: #FF562D;
         -webkit-box-shadow: 0 0 10px #FF7E6A;
@@ -102,8 +101,7 @@
     }
     &.accept{
       background:url(/assets/icons/accepted-for-icon-white.png) no-repeat #7BC2C2;
-      background-position-x: center;
-      background-position-y: 3px;
+      background-position:center center;
       &:not(.disabled-btn):hover{
         background-color: #90E3E3;
         -webkit-box-shadow: 0 0 10px #7BC2C2;
@@ -114,8 +112,7 @@
     }
     &.complete{
       background:url(/assets/icons/done-for-icon-white.png) no-repeat #F19000;
-      background-position-x: center;
-      background-position-y: 4px;
+      background-position:center center;
       &:not(.disabled-btn):hover{
         background-color: #FFB200;
         -webkit-box-shadow: 0 0 10px #F19000;
@@ -126,21 +123,17 @@
     }
     &.disabled-btn.accept{
       background:url(/assets/icons/accepted.png) no-repeat #fff;
-      background-position-x:center;
-      background-position-y:3px;
+      background-position:center center;
 
     }
     &.disabled-btn.reject{
       background:url(/assets/icons/rejected.png) no-repeat #fff;
-      background-position-x:center;
-      background-position-y:3px;
+      background-position:center center;
 
     }
     &.disabled-btn.complete{
       background:url(/assets/icons/done.png) no-repeat #fff;
-      background-position-x:center;
-      background-position-y:3px;
-
+      background-position:center center;
     }
     &.disabled-btn{
       background-color:transparent;
