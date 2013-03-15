@@ -11,21 +11,45 @@
     .description{
       display:inline-block;
       vertical-align:top;
+      min-height:90px;
       width: 382px;
       padding: 0 20 0 0px;
       position: relative;
       height: 100%;
     }
+    .wrapper{
+      display:inline-block;
+      position:relative;
+      vertical-align:top;
+      overflow:hidden;
+      .info{
+        position:absolute;
+        bottom:2px;
+      }
+    }
     .category-img{
       display:inline-block;
-      vertical-align:top;
+      vertical-align:bottom;
       width:40px;
       float:none;
       position:relative;
+      &:after{
+        background:#F19000;
+        content:'';
+        display:inline-block;
+   /*     height:70px;*/
+        margin-top:-9999px;
+        padding-top:9999px;
+        width:7px;
+      }  
     }
     h2{
       color:#F19000;
     }
+/*    .info{
+      position:absolute;
+      bottom:16px;
+    }*/
   }
 }
 /***************************************************Votes Controls*/

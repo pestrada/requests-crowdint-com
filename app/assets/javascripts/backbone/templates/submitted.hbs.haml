@@ -1,26 +1,26 @@
 - cat = "{{ this.category }}"
 - can_vote = "{{can_vote this.can_vote}}"
-.category-img
-  = image_tag "icons/#{cat}.png"
-.description
-  %p
-    {{ this.description }}
+.wrapper
+  .category-img
+    = image_tag "icons/#{cat}.png"
+  .description
+    %p
+      {{ this.description }}
+  .info
+    .category-name
+      {{ this.category }}
+    .time
+      {{ this.created_at }}
+    .owner
+      {{this.name}}
+    .comments-count{title: 'show/hide comments'}
+      = image_tag "icons/comments-link.png"
+      {{ this.comments.length}}
 
 .vote-controls
   .votes
     %span {{ this.votes }}
     %span VOTES
   = link_to '+1', '#', class: "#{can_vote} like"
-
-.info
-  .category-name
-    {{ this.category }}
-  .time
-    {{ this.created_at }}
-  .owner
-    {{this.name}}
-  .comments-count{title: 'show/hide comments'}
-    = image_tag "icons/comments-link.png"
-    {{ this.comments.length}}
 
 .comments-area.hidden

@@ -221,9 +221,6 @@ header{
 // ************************************************** Comments
 .comments-area{
   padding-left:40px;
-  li{
-    font-size:13px;
-  }
   li:first-child{
     border-top:1px dashed #ccc;
   }
@@ -251,7 +248,7 @@ header{
     height:12px;
     padding:10px 5px 10px 50px;
     resize:none;
-    width:340px;
+    width:335px;
   }
   .add_comment{
     background:url(/assets/icons/comment-for-button-white.png) #F19000 no-repeat;
@@ -261,7 +258,16 @@ header{
     border-radius:50px;
     display:inline-block;
     height:30px;
+    margin-left:5px;
     width:30px;
+  }
+  .add_comment{
+    -moz-box-shadow: 0px 0px 5px #aaa;
+    -webkit-box-shadow: 0px 0px 5px #aaa;
+    box-shadow: 0px 0px 5px #aaa;
+  }
+  .add_comment:hover{
+    background-color:#D8D8D8;
   }
   ul{
     max-height: 275px;
