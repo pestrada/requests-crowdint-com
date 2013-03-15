@@ -52,18 +52,6 @@ class App.Views.Submitted extends App.Views.Request
     @$el.css('background', '#C7DEA9').fadeOut(1600)
     @stopListening()
 
-  comment_on_enter: (e)->
-    e.preventDefault()
-    if e.keyCode is 13
-      @comment(e.target.value)
-    else
-      @$el.find('.char-counter').text(140 - @$el.find('.new_comment').val().length)
-
-  comment_on_click: (e)->
-    e.preventDefault()
-    value = @$el.find('.new_comment').val()
-    @comment(value)
-
   do_nothing: (e)->
     e.preventDefault()
 

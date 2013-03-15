@@ -6,8 +6,9 @@ class App.Views.Promoted extends App.Views.Request
   events:
     'click .accept'  : 'accept'
     'click .reject'  : 'reject'
-    'keyup .new_comment' : 'comment'
     'click .comments-count' : 'show_comments'
+    'click .add_comment'    : 'comment_on_click'
+    'keyup .new_comment'    : 'comment_on_enter'
 
 
   initialize: ->

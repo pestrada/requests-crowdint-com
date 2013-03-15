@@ -5,8 +5,9 @@ class App.Views.Accepted extends App.Views.Request
 
   events:
     'click .complete': 'complete'
-    'keyup .new_comment' : 'comment'
     'click .comments-count' : 'show_comments'
+    'click .add_comment'    : 'comment_on_click'
+    'keyup .new_comment'    : 'comment_on_enter'
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")

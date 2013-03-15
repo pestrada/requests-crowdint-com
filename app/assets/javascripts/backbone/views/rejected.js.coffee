@@ -4,8 +4,9 @@ class App.Views.Rejected extends App.Views.Request
   template: HandlebarsTemplates['backbone/templates/rejected']
 
   events:
-    'keyup .new_comment' : 'comment'
     'click .comments-count' : 'show_comments'
+    'click .add_comment'    : 'comment_on_click'
+    'keyup .new_comment'    : 'comment_on_enter'
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")

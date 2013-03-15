@@ -4,8 +4,9 @@ class App.Views.Done extends App.Views.Request
   template: HandlebarsTemplates['backbone/templates/done']
 
   events:
-    'keyup .new_comment' : 'comment'
     'click .comments-count' : 'show_comments'
+    'click .add_comment'    : 'comment_on_click'
+    'keyup .new_comment'    : 'comment_on_enter'
 
   initialize: ->
     @$el.attr('id', "request-#{@model.id}")

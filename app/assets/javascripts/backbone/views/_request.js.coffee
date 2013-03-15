@@ -24,3 +24,15 @@ class App.Views.Request extends Backbone.View
   formatProcessedRequest: (json)->
     time = moment(json.created_at).format("MMM Do YY")
     _.extend json, { isAdmin: App.isAdmin, created_at: time }
+
+  comment_on_enter: (e)->
+    e.preventDefault()
+    if e.keyCode is 13
+      @comment(e.target.value)
+    else
+      @$el.find('.char-counter').text(140 - @$el.find('.new_comment').val().length)
+
+  comment_on_click: (e)->
+    e.preventDefault()
+    value = @$el.find('.new_comment').val()
+    @comment(value)
