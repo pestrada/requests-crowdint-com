@@ -5,7 +5,7 @@
   .date
     {{ this.created_at }}
   .category-name
-    {{ this.category }}
+    = image_tag "icons/{{ this.category }}-small.png", title: "{{ this.category }}"
   .owner
     {{ this.name }}
   .comments-count{title: 'show/hide comments'}

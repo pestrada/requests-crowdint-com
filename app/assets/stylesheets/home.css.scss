@@ -131,7 +131,7 @@ header{
 .info{
   height:13px;
   padding-left:40px;
-  overflow:hidden;
+  overflow:visible;
   & > div{
     float:left;
     font-size:11px;
@@ -139,6 +139,14 @@ header{
   }
   & > div:not(:last-child){
     border-right:1px solid #ccc;
+  }
+  .category-name{
+    height:11px;
+    overflow:visible;
+    img{
+      bottom:8px;
+      position:relative;
+    }
   }
 }
 .category-img{
