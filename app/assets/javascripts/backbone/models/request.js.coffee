@@ -72,3 +72,9 @@ class App.Collections.Submitted extends App.Collections.Requests
 
 class App.Collections.Promoted extends App.Collections.Requests
   url: '/api/requests?state=processed'
+
+class App.Collections.Rejected extends App.Collections.Requests
+  url: '/api/requests?state=rejected'
+
+class App.Collections.Completed extends App.Collections.Requests
+  url: '/api/requests?state=done'

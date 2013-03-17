@@ -8,8 +8,6 @@ class App.Views.Application extends Backbone.View
 
   render: ->
     @$el.html(@template(App.current_user))
-    App.form = new App.Views.NewRequest({ collection: App.submitted_list })
-    App.form.render()
     @scrollCheck()
 
   initializePusher: ->
@@ -28,3 +26,4 @@ class App.Views.Application extends Backbone.View
       else
         $h.removeClass "fixedHeader"
         $c.removeClass "marginToClearHeader"
+

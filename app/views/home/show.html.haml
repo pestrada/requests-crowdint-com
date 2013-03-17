@@ -1,12 +1,20 @@
 :javascript
   var submitted = #{Rabl::Renderer.json(@submitted, 'home/requests', :view_path => 'app/views', scope: self)};
   var promoted = #{Rabl::Renderer.json(@promoted, 'home/requests', :view_path => 'app/views', scope: self)};
+  var completed = #{Rabl::Renderer.json(@completed, 'home/requests', :view_path => 'app/views', scope: self)};
+  var rejected = #{Rabl::Renderer.json(@rejected, 'home/requests', :view_path => 'app/views', scope: self)};
 
   App.submitted_list = new App.Collections.Submitted();
   App.promoted_list  = new App.Collections.Promoted();
+  App.completed_list  = new App.Collections.Completed();
+  App.rejected_list  = new App.Collections.Rejected();
+  App.promoted_history_list = new App.Collections.Promoted();
 
   App.submitted_list.reset(submitted);
   App.promoted_list.reset(promoted);
+  App.promoted_history_list.reset(promoted);
+  App.completed_list.reset(completed);
+  App.rejected_list.reset(rejected);
 
   App.votesLimit = #{Rails.application.config.votes_limit};
 

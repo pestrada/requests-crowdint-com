@@ -12,7 +12,6 @@
   li{
     padding:18px 0 0px;
     position:relative;
-    border-bottom:1px dashed #ccc;
   }
   .description{
     height:79px;
@@ -147,4 +146,23 @@
   & > *:not(:first-child){
       margin-left:7px;
     }
+}
+/*history promoted list*/
+.history .promoted-list{
+  .list{
+    padding-left:0;
+  }
+  .comments-area{
+    padding-left:10px;
+    ul{
+      padding-left:0;
+    }
+  }
+  .new_comment{
+    margin-left:0;
+    width:140px;
+  }
+  .char-counter{
+    left:12px;
+  }
 }

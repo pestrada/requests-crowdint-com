@@ -1,0 +1,92 @@
+.history{
+  margin-top:10px;
+  overflow:hidden;
+  > section{
+    display:inline-block;
+    margin-top: 30px;
+    vertical-align:top;
+    width:268px;
+    &:not(:last-child){
+      padding-right:20px;
+    }
+    .info{
+      padding:0;
+    }
+    .actions{
+      height:26px;
+    }
+    ul{
+      border-left:none;
+      border-right:1px dashed #ccc;
+    }
+    &:last-child ul{
+      border-right:none;
+    }
+  }
+  .comments-area{
+    padding-left:10px;
+    .new_comment{
+      width:140px;
+    }
+  }
+}
+.thumbnail{
+  height: 75px;
+  overflow: hidden;
+  padding-top: 2px;
+}
+.round-button{
+  background-color:transparent;
+  border-radius:200px;
+  cursor:pointer;
+  float:left;
+  height:60px;
+  margin:0 54px;
+  opacity:.6;
+  position:relative;
+  width:60px;
+  -moz-box-shadow: 0px 0px 5px #aaa;
+  -webkit-box-shadow: 0px 0px 5px #aaa;
+  box-shadow: 0px 0px 5px #aaa;
+  &:hover{
+    background-color:#fff;
+    opacity:1;
+  }
+  > span{
+    position:absolute;
+    right:-75px;
+    text-align:left;
+    top:20px;
+    width:60px;
+  }
+}
+.office{
+  background:url(/assets/icons/office.png) no-repeat;
+  background-position:center center;
+}
+.hardware{
+  background:url(/assets/icons/hardware.png) no-repeat;
+  background-position:center center;
+}
+.software{
+  background:url(/assets/icons/software.png) no-repeat;
+  background-position:center center;
+}
+.equipment{
+  background:url(/assets/icons/equipment.png) no-repeat;
+  background-position:center center;
+}
+.food{
+  background:url(/assets/icons/food.png) no-repeat;
+  background-position:center center;
+}
+.rejected-list{
+  h2{
+    color:#D64826;
+  }
+}
+.completed-list{
+  h2{
+  color:#000;
+  }
+}
