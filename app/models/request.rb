@@ -6,5 +6,4 @@ class Request < VotingApp::Request
   def as_json *args
     super methods: [:cached_votes_total]
   end
-
 end

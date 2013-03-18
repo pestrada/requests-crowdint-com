@@ -1,0 +1,7 @@
+%h1 New comment on the request you are supporting!
+%br/
+%blockquote "#{@request.comments.last.comment}"
+%br/
+%p
+  To see or comment the request go to 
+  = link_to root_url, root_url + "#requests/#{@request.id}" 

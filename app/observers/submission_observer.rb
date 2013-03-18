@@ -18,9 +18,6 @@ class SubmissionObserver < ActiveRecord::Observer
     @notification.deliver
   end
 
-  def notify_liked(notification)
-  end
-
   def notify_promoted(notification)
     @notification = Notifier.request_promoted(notification.submission)
     @notification.deliver
@@ -28,6 +25,16 @@ class SubmissionObserver < ActiveRecord::Observer
 
   def notify_rejected(notification)
     @notification = Notifier.request_rejected(notification.submission)
+    @notification.deliver
+  end
+
+  def notify_liked(notification)
+    #@notification = Notifier.request_liked(notification.submission)
+    #@notification.deliver
+  end
+
+  def notify_commented(notification)
+    @notification = Notifier.request_commented(notification.submission)
     @notification.deliver
   end
 end
