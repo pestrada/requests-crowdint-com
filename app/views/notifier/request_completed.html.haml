@@ -1,4 +1,8 @@
-%h1 A new request has been completed
+%h1 A request has been completed!
+%br/
 %blockquote "#{@request.description}"
+%br/
+%Thanks to "#{@request.user.name}" who request it and to all the people who support it, we can now all enjoy an even more pleasant working enviroment :D
 %p
-  = link_to 'see it here', root_url + "#requests/#{@request.id}"
+  To see or comment the request go to 
+  = link_to root_url, root_url + "#requests/#{@request.id}" 
