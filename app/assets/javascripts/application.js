@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require autolink
 //= require handlebars.runtime
 //= require jquery.endless-scroll
 //= require underscore

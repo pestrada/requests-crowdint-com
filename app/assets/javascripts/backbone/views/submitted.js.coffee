@@ -25,6 +25,7 @@ class App.Views.Submitted extends App.Views.Request
 
   render: ->
     json = @model.toJSON()
+    @description_auto_links(json)
     @formatCommentsTime(json.comments)
     time = moment(json.created_at).add('day', 7).fromNow()
     _.extend json, { created_at: time, can_vote: @can_vote }

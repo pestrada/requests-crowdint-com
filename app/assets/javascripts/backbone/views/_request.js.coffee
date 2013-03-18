@@ -19,7 +19,7 @@ class App.Views.Request extends Backbone.View
   formatCommentsTime: (comments) ->
     for comment in comments
       time = moment(comment.created_at).fromNow()
-      _.extend comment, {created_at: time}
+      _.extend comment, {comment: comment.comment.autoLink(), created_at: time}
 
   formatProcessedRequest: (json)->
     time = moment(json.created_at).format("MMM Do YY")
@@ -36,3 +36,6 @@ class App.Views.Request extends Backbone.View
     e.preventDefault()
     value = @$el.find('.new_comment').val()
     @comment(value)
+
+  description_auto_links: (json) ->
+    _.extend json, { description: json.description.autoLink() }

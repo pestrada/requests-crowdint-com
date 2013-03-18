@@ -14,6 +14,7 @@ class App.Views.Rejected extends App.Views.Request
 
   render: ->
     json = @model.toJSON()
+    @description_auto_links(json)
     @formatProcessedRequest(json)
     @formatCommentsTime(json.comments)
     @$el.html(@template(json))
