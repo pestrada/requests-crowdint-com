@@ -31,10 +31,12 @@ class App.Routers.Application extends Backbone.Router
     App.histoyMenu_view.render()
 
   setTooltips: ->
-    $('.votes').qtip ->
-      content: $(this).find('.supporters')
-      show: 'mouseover'
-      hide: 'mouseout'
+    $(".votes").each ->
+      $(this).qtip
+        content:
+          text: $(this).find('.supporters').html()
+        show: "mouseover"
+        hide: "mouseout"
 
 class App.Routers.Admin extends App.Routers.Application
   adminRoutes:

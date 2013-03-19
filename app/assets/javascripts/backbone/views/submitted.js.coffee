@@ -9,7 +9,7 @@ class App.Views.Submitted extends App.Views.Request
 
   events:
     'click .like.can-vote'  : 'like'
-    'click .like.cant-vote'  : 'do_nothing'
+    'click .like.cant-vote' : 'do_nothing'
     'click .comments-count' : 'show_comments'
     'click .add_comment'    : 'comment_on_click'
     'keyup .new_comment'    : 'comment_on_enter'
