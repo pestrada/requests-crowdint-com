@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/crowdint/voting_engine.git
-  revision: 9e3da2d8fca5e1c0d5a780cd7767426e5d8dcf72
+  revision: 77da59e62d8fc16de2d7cc1e818ab0e71d6452f7
   specs:
     voting_app (0.0.1)
       acts_as_votable (~> 0.5.0)
@@ -143,7 +143,7 @@ GEM
     no_peeping_toms (2.1.3)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-    nokogiri (1.5.6)
+    nokogiri (1.5.7)
     omniauth (1.1.3)
       hashie (~> 1.2)
       rack

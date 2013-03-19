@@ -35,6 +35,6 @@ class Notifier < ActionMailer::Base
   def request_commented(request)
     @request = request
     mail(to: "no-reply@crowdint.com", subject: "New comment on #{request.name}'s request",
-        bcc: request.supporters)
+        bcc: request.involved_users)
   end
 end
