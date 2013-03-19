@@ -8,6 +8,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'airbrake'
 gem 'celluloid'
 gem 'crowdint_auth'
 gem 'devise'
