@@ -37,6 +37,13 @@ class App.Routers.Application extends Backbone.Router
           text: $(this).find('.supporters').html()
         show: "mouseover"
         hide: "mouseout"
+        position:
+          corner:
+            target: 'rightMiddle'
+            tooltip: 'leftMiddle'
+        style:
+          name: 'dark'
+          lineHeight: '20px'
 
 class App.Routers.Admin extends App.Routers.Application
   adminRoutes:
