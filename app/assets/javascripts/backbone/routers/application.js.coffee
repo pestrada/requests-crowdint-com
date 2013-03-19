@@ -12,6 +12,7 @@ class App.Routers.Application extends Backbone.Router
     App.requests_view.render()
     App.promoted_view = new App.Views.PromotedList({ collection: App.promoted_list }) unless App.promoted_view?
     App.promoted_view.render()
+    @setTooltips()
 
   showRequest: (id)->
     @showRequestList()
@@ -28,6 +29,12 @@ class App.Routers.Application extends Backbone.Router
     if App.promoted_view? then App.promoted_view.$el.empty()
     App.histoyMenu_view = new App.Views.HistoryMenu() unless App.histoyMenu_view?
     App.histoyMenu_view.render()
+
+  setTooltips: ->
+    $('.votes').qtip ->
+      content: $(this).find('.supporters')
+      show: 'mouseover'
+      hide: 'mouseout'
 
 class App.Routers.Admin extends App.Routers.Application
   adminRoutes:

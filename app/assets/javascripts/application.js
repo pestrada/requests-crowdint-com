@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquery.qtip.min
 //= require autolink
 //= require handlebars.runtime
 //= require jquery.endless-scroll

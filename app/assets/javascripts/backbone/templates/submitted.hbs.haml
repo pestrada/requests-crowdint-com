@@ -21,6 +21,9 @@
   .votes
     %span {{ this.votes }}
     %span VOTES
+    .supporters{ hidden: 'hidden'}
+      {{{ this.liked_by }}}
+
   = link_to '+1', '#', class: "#{can_vote} like"
 
 .comments-area.hidden

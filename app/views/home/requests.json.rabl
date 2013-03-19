@@ -7,3 +7,5 @@ node(:votes) { |s| s.cached_votes_total }
 child(:comments) { attributes :comment, :user_id, :name, :created_at }
 
 node(:can_vote) { |r| RequestPresenter.new(r).can_vote?(current_user) }
+
+node(:liked_by) { |r| r.supporters.join("<br />") }
