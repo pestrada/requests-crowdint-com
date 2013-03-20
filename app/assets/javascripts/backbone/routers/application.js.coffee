@@ -44,6 +44,7 @@ class App.Routers.Application extends Backbone.Router
         style:
           name: 'dark'
           lineHeight: '20px'
+          tip: 'leftMiddle'
 
 class App.Routers.Admin extends App.Routers.Application
   adminRoutes:
