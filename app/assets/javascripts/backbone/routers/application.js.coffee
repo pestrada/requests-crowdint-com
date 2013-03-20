@@ -30,6 +30,7 @@ class App.Routers.Application extends Backbone.Router
     if App.promoted_view? then App.promoted_view.$el.empty()
     App.histoyMenu_view = new App.Views.HistoryMenu() unless App.histoyMenu_view?
     App.histoyMenu_view.render()
+    @setTooltips()
 
   showRequestInHistory: (id)->
     @showHistory()

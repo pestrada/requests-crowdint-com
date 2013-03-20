@@ -8,6 +8,10 @@
     = image_tag "categories/{{ this.category }}-small.png", title: "{{ this.category }}"
   .owner
     {{ this.name }}
+  .votes
+    %span +{{ this.votes }}
+    .supporters{ hidden: 'hidden'}
+      {{{ this.liked_by }}}
   .comments-count{title: 'show/hide comments'}
     .comments_link
     {{ this.comments.length }}
