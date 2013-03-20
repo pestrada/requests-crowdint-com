@@ -27,10 +27,7 @@ class App.Views.Request extends Backbone.View
 
   comment_on_enter: (e)->
     e.preventDefault()
-    if e.keyCode is 13
-      @comment(e.target.value)
-    else
-      @$el.find('.char-counter').text(140 - @$el.find('.new_comment').val().length)
+    @$el.find('.char-counter').text(140 - @$el.find('.new_comment').val().length)
 
   comment_on_click: (e)->
     e.preventDefault()
@@ -39,3 +36,12 @@ class App.Views.Request extends Backbone.View
 
   description_auto_links: (json) ->
     _.extend json, { description: json.description.autoLink() }
+
+  highlightRequest: ->
+    if location.hash[1] == 'h' 
+      id = '#history-requests/' + @$el.attr('id').replace( /^\D+/g, '');
+    else
+      id = '#requests/' + @$el.attr('id').replace( /^\D+/g, '');
+    window.history.pushState("", "", id);
+    $('li').removeClass('selected')
+    @$el.addClass('selected')

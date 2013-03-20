@@ -13,6 +13,7 @@ class App.Views.Submitted extends App.Views.Request
     'click .comments-count' : 'show_comments'
     'click .add_comment'    : 'comment_on_click'
     'keyup .new_comment'    : 'comment_on_enter'
+    'click'                 : 'highlightRequest'
 
   initialize: ->
     @$el.addClass("submission-#{@model.id}")

@@ -23,10 +23,7 @@ class App.Views.NewRequest extends Backbone.View
 
   add_new_submission_on_enter: (e)->
     e.preventDefault()
-    if e.keyCode is 13
-      @add_new_submission()
-    else
-      $('.char-counter').text(140 - $('#new_submission').val().length)
+    $('.char-counter').text(140 - $('#new_submission').val().length)
 
   add_new_submission: (description)->
     textarea = @$el.find('#new_submission')

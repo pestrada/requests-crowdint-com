@@ -3,6 +3,7 @@ class App.Routers.Application extends Backbone.Router
     ''            : 'showRequestList'
     'requests/:id': 'showRequest'
     'history'     : 'showHistory'
+    'history-requests/:id' : 'showRequestInHistory'
 
   showRequestList: ->
     if App.histoyMenu_view then App.histoyMenu_view.$el.empty()
@@ -19,7 +20,7 @@ class App.Routers.Application extends Backbone.Router
     request = $("#request-#{id}")
     if request.length > 0
       $('html, body').animate({ scrollTop: request.offset().top }, 'slow');
-      request.effect('highlight', {}, 2000)
+      request.addClass('selected')
     else
       @navigate('')
 
@@ -29,6 +30,15 @@ class App.Routers.Application extends Backbone.Router
     if App.promoted_view? then App.promoted_view.$el.empty()
     App.histoyMenu_view = new App.Views.HistoryMenu() unless App.histoyMenu_view?
     App.histoyMenu_view.render()
+
+  showRequestInHistory: (id)->
+    @showHistory()
+    request = $("#request-#{id}")
+    if request.length > 0
+      $('html, body').animate({ scrollTop: request.offset().top }, 'slow');
+      request.addClass('selected')
+    else
+      @navigate('history')
 
   setTooltips: ->
     $(".votes").each ->
