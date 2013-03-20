@@ -2,7 +2,7 @@
 - can_vote = "{{can_vote this.can_vote}}"
 .wrapper
   .category-img
-    = image_tag "icons/#{cat}.png"
+    = image_tag "categories/#{cat}.png"
   .description
     %p
       {{{ this.description }}}
@@ -14,7 +14,7 @@
     .owner
       {{this.name}}
     .comments-count{title: 'show/hide comments'}
-      = image_tag "icons/comments-link.png"
+      .comments_link
       {{ this.comments.length}}
 
 .vote-controls

@@ -5,11 +5,11 @@
   .date
     {{ this.created_at }}
   .category-name
-    = image_tag "icons/{{ this.category }}-small.png", title: "{{ this.category }}"
+    = image_tag "categories/{{ this.category }}-small.png", title: "{{ this.category }}"
   .owner
     {{ this.name }}
   .comments-count{title: 'show/hide comments'}
-    = image_tag "icons/comments-link.png"
+    .comments_link
     {{ this.comments.length }}
   {{#unless this.isAdmin}}
   %div{ class: 'done' }
