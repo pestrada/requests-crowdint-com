@@ -68,6 +68,13 @@
     padding:5px;
   }
 }
+.timed-out{
+  color:#F19000;
+  &:after{
+    content:'Timed Out';
+    padding:5px;
+  }
+}
 .comments{
   background:url(/assets/icons/comment-for-icon-black.png) no-repeat;
   background-position:center;

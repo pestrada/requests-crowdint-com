@@ -1,0 +1,16 @@
+.description
+  %p
+    {{ this.description }}
+.info
+  .date
+    {{ this.created_at }}
+  .category-name
+    = image_tag "icons/{{ this.category }}-small.png", title: "{{ this.category }}"
+  .owner
+    {{ this.name }}
+  .comments-count{title: 'show/hide comments'}
+    = image_tag "icons/comments-link.png"
+    {{ this.comments.length }}
+%div{ class: 'timed-out' }
+
+.comments-area.hidden
