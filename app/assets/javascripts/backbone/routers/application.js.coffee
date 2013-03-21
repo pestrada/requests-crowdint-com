@@ -20,6 +20,7 @@ class App.Routers.Application extends Backbone.Router
     request = $("#request-#{id}")
     if request.length > 0
       $('html, body').animate({ scrollTop: request.offset().top - 80}, 'slow');
+      request.effect('highlight', {}, 2000)
       request.addClass('selected')
     else
       @navigate('')
@@ -37,6 +38,7 @@ class App.Routers.Application extends Backbone.Router
     request = $("#request-#{id}")
     if request.length > 0
       $('html, body').animate({ scrollTop: request.offset().top - 80}, 'slow');
+      request.effect('highlight', {}, 2000)
       request.addClass('selected')
     else
       @navigate('history')
