@@ -13,7 +13,8 @@ class Notifier < ActionMailer::Base
     mail(subject: "#{request.name}'s request has been promoted")
   end
 
-  def request_accepted(request)
+  def request_accepted(user, request)
+    @user = user.name
     @request = request
     mail(subject: "#{request.name}'s request has been accepted")
   end

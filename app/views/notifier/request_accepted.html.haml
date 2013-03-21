@@ -2,7 +2,10 @@
 %br/
 %blockquote "#{@request.description}"
 %p 
-  Now thats it's been accepted, it's just a matter of time until it gets done
+  It was accepted by 
+  %strong
+    #{@user}, 
+  It's just a matter of time until it gets done!
 %p
   To see or comment the request go to 
-  = link_to root_url, root_url + "#requests/#{@request.id}" 
+  = link_to root_url, root_url + "#requests/#{@request.id}"
