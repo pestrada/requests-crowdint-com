@@ -31,11 +31,15 @@ gem 'voting_app',
     git: 'git://github.com/crowdint/voting_engine.git'
 
 group :development, :test do
+  gem "brakeman"
+  gem "cane"
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'fivemat'
   gem 'no_peeping_toms'
   gem 'poltergeist'
+  gem "rails_best_practices"
+  gem "reek"
   gem 'rspec-rails', "~> 2.12.2"
   gem 'sqlite3'
   gem 'json_spec'
