@@ -1,8 +1,11 @@
-%h1 A request has been promoted!
-%br/
+
 %blockquote "#{@request.description}"
 %p
-  The request has received the support needed. Its now up to the admins to either accept it or reject it.
+  Was voted by #{ENV['VOTES_LIMIT']} crowdies and is now promoted. It will be marked as approved/rejected soon.
+
+%p
+  %strong
+    Thanks for your cooperation!
 %p
   To see or comment the request go to 
   = link_to root_url, root_url + "#requests/#{@request.id}" 

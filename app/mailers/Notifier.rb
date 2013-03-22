@@ -5,12 +5,12 @@ class Notifier < ActionMailer::Base
 
   def new_request(request)
     @request = request
-    mail(subject: "Request created by #{request.name}")
+    mail(subject: "New Request created by #{request.name}")
   end
 
   def request_promoted(request)
     @request = request
-    mail(subject: "#{request.name}'s request has been promoted")
+    mail(subject: "Promoted request, submitted by: #{request.name}")
   end
 
   def request_accepted(user, request)

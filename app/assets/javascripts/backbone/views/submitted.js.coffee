@@ -46,7 +46,6 @@ class App.Views.Submitted extends App.Views.Request
 
   promoteRequest: ->
     @model.collection.remove(@model)
-    @model.set('state', 'promoted')
     App.promoted_list.add @model, { silent: true }
     App.promoted_list.trigger('add-new', @model)
 
