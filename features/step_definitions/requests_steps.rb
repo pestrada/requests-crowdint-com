@@ -100,3 +100,7 @@ Then /^I should see the "(.*?)" request completed/ do |request|
     find(:xpath, "//li[contains(., '#{request}')]/div[@class='actions']/div[@class='done']")
   end.to_not raise_error Capybara::ElementNotFound
 end
+
+When(/^I select a category$/) do
+  page.execute_script("$('#demo-htmlselect').data('ddslick').selectedData.value = 'office'")
+end

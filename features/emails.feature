@@ -5,5 +5,6 @@ Feature: Send Emails
     Given I am logged in
      When I go to the home page
       And I write the request "foo request"
+      And I select a category
       And I submit the request
      Then I should receive a new request notification

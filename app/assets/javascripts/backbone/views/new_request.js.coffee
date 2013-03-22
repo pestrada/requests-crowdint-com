@@ -5,7 +5,7 @@ class App.Views.NewRequest extends Backbone.View
 
   events:
     'click #add_new_submission': 'add_new_submission_on_click'
-    'keyup #new_submission' : 'add_new_submission_on_enter'
+    'keyup #new_submission'    : 'add_new_submission_on_enter'
 
   render: ->
     $('header').append(@$el.html(@template))
@@ -26,23 +26,27 @@ class App.Views.NewRequest extends Backbone.View
     $('.char-counter').text(140 - $('#new_submission').val().length)
 
   add_new_submission: (description)->
-    textarea = @$el.find('#new_submission')
     category = $("#demo-htmlselect").data('ddslick').selectedData.value
-    description = textarea.val()
-    request = new App.Models.Request({ description: _.str.rtrim(description), category: category })
-    request.on 'invalid', =>
-      @showMessage('Error', 'Request should be > 0 < 140 chars', 'error')
-    request.save {},
-      success: =>
-        @collection.add request, { silent: true }
-        @collection.trigger 'add-new', request
-        textarea.val('')
-        $('.char-counter').text('140')
+    if category == '0'
+      @showMessage('Error', 'Select a Category', 'error')
+    else
+      textarea = @$el.find('#new_submission')
+      description = textarea.val()
+      request = new App.Models.Request({ description: _.str.rtrim(description), category: category })
+      request.on 'invalid', =>
+        @showMessage('Error', 'Request should be > 0 < 140 chars', 'error')
+      request.save {},
+        success: =>
+          @collection.add request, { silent: true }
+          @collection.trigger 'add-new', request
+          textarea.val('')
+          $('.char-counter').text('140')
 
   createCategoriesDropdown: ->
     $("#demo-htmlselect").ddslick
       width: "55px"
       enableKeyboard: false
+    $('.dd-container ul li:first').css('display', 'none')
 
   showMessage: (title, text, className ) ->
     $.gritter.add
@@ -50,3 +54,5 @@ class App.Views.NewRequest extends Backbone.View
       text: text
       image: '/assets/transparent.png'
       class_name: className
+
+

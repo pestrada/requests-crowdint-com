@@ -5,6 +5,9 @@
 		margin:0;
 		cursor:pointer;
   }
+	.dd-select:hover a{
+		background:#D8D8D8;
+	}
 	.dd-select a { 
 		text-decoration:none;
 		font-weight: bold;
@@ -41,12 +44,7 @@
     padding: 4px 0;
   }
 	.dd-pointer { 
-		width:0; 
-		height:0; 
-		position:absolute; 
-		right:2px;
-		top:20px;
-		margin-top:-3px;
+		display:none;
   }
 	.dd-pointer-down { 
 		border:solid 5px transparent; 
@@ -107,6 +105,9 @@
 		transition: all 0.25s ease-in-out;
 		cursor:pointer;
   }
+  .dd-option img{
+  	height:30px;
+  }
 	.dd-option:hover, .dd-option-hover, .dd-option-selected.dd-option-hover { 
 		background: #ffffff !important;
 		background: #ffffff !important;
@@ -138,7 +139,7 @@
 		vertical-align:middle; 
     height:25px;
     position: relative;
-    top: 1px;
+    top: -1px;
 		max-width:64px;
   }
 	.dd-image-right { 
@@ -153,4 +154,4 @@
 	.dd-selected-text {
 		font-weight:bold;
 		cursor:pointer !important;
-     }
+  }
