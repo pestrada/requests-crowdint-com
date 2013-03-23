@@ -21,7 +21,7 @@ class App.Views.SubmittedList extends Backbone.View
 
   addNew: (request)->
     view = new App.Views.Submitted({ model: request })
-    @$el.find('ul.list').prepend(view.render().el)
+    @$el.find('ul.list').append(view.render().el)
 
   removeRequest: (model)->
     model.trigger('remove')
