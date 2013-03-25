@@ -1,9 +1,9 @@
 .description
   %p
-    {{ this.description }}
+    {{{detectLinks this.description}}}
 .info
   .date
-    {{ this.created_at }}
+    {{formatProcessedRequestDate this.created_at}}
   .category-name
     = image_tag "categories/{{ this.category }}-small.png", title: "{{ this.category }}"
   .owner
@@ -15,15 +15,15 @@
   .comments-count{title: 'show/hide comments'}
     .comments_link
     {{ this.comments.length }}
-  {{#unless this.isAdmin}}
+  {{#ifUserIsNotAdmin this}}
   %div{ class: 'accepted' }
-  {{/unless}}
-{{#if this.isAdmin}}
+  {{/ifUserIsNotAdmin}}
+{{#ifUserIsAdmin this}}
 .actions
   %a.reject.disabled-btn Reject
   %a.accept.disabled-btn Accept
   = link_to 'Complete', '#', {class: 'complete', title: 'Mark as done'}
   %div{ class: 'accepted' }
-{{/if}}
+{{/ifUserIsAdmin}}
 
 .comments-area.hidden

@@ -5,12 +5,12 @@
     = image_tag "categories/#{cat}.png"
   .description
     %p
-      {{{ this.description }}}
+      {{{detectLinks this.description }}}
   .info
     .category-name
       {{ this.category }}
     .time
-      {{ this.created_at }}
+      {{{formatSubmittedDate this.created_at}}}
     .owner
       {{this.name}}
     .comments-count{title: 'show/hide comments'}
@@ -27,3 +27,4 @@
   = link_to '+1', '#', class: "#{can_vote} like"
 
 .comments-area.hidden
+{{isAdmin}}

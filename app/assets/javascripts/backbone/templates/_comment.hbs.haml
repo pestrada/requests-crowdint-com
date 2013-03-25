@@ -1,6 +1,6 @@
-%p {{{this.comment}}}
+%p {{{detectLinks this.comment }}}
 .info
   .date
-    {{ this.created_at }}
+    {{formatDate this.created_at}}
   .owner
     {{this.name}}

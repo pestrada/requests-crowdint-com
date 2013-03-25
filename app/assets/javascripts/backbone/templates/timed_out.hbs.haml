@@ -1,9 +1,9 @@
 .description
   %p
-    {{ this.description }}
+    {{{detectLinks this.description}}}
 .info
   .date
-    {{ this.created_at }}
+    {{formatProcessedRequestDate this.created_at}}
   .category-name
     = image_tag "categories/{{ this.category }}-small.png", title: "{{ this.category }}"
   .owner
