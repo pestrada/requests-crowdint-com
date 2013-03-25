@@ -5,7 +5,13 @@ Handlebars.registerHelper 'formatDate', (date)->
   moment(date).fromNow()
 
 Handlebars.registerHelper 'formatSubmittedDate', (date)->
-  moment(date).add('day', 7).fromNow()
+  requestDate = moment(date).format('MMMM Do YYYY, h:mm:ss a')
+  aboutToExpire = moment().subtract('days', 1).format('MMMM Do YYYY, h:mm:ss a')
+  formattedDate = moment(date).add('day', 7).fromNow()
+  if requestDate >= aboutToExpire
+    "<div class='aboutToExpire'>" + formattedDate + "</div>"
+  else
+    formattedDate
 
 Handlebars.registerHelper 'formatProcessedRequestDate', (date)->
   moment(date).format("MMM Do YY")
