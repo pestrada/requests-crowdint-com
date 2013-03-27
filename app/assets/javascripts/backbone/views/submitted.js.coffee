@@ -1,5 +1,4 @@
 class App.Views.Submitted extends App.Views.Request
-#  el: 'section.submission-list ul'
 
   tagName: 'li'
 

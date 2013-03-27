@@ -11,6 +11,7 @@ class App.Views.Request extends Backbone.View
     @renderComments()
     list = @$el.find('.comments-area ul')
     list.scrollTop list.prop('scrollHeight')
+    comments_count = @$el.find('.comments-count span').text @model.get('comments').length
     @.delegateEvents()
 
   show_comments: ()->

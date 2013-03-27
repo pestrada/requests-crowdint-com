@@ -14,7 +14,7 @@
       {{{ this.liked_by }}}
   .comments-count{title: 'show/hide comments'}
     .comments_link
-    {{ this.comments.length }}
+    %span {{ this.comments.length }}
   {{#ifUserIsNotAdmin this}}
   %div{ class: 'done' }
   {{/ifUserIsNotAdmin}}
