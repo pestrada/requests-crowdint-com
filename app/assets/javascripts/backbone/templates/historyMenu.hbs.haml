@@ -1,15 +1,22 @@
-%p Choose a category to see its history
-.thumbnail.fancy-border
-  .office.round-button 
-    %span Office
-  .hardware.round-button 
-    %span Hardware
-  .software.round-button
-    %span Software
-  .equipment.round-button
-    %span Equipment
-  .food.round-button
-    %span Food
+.filters.fancy-border
+  .time-filter
+    %p Select a period of time
+    .controls
+      .month.round-button.active{'data-val' => 'month'}
+        %span This month
+      .year.round-button{'data-val' => 'year'}
+        %span This year
+      .all.round-button{'data-val' => 'all'}
+        %span All
+  .category-filter
+    %p Choose a category to see its history
+    .thumbnail
+      .cat-all.round-button.active{title: 'All Categories', 'data-val' => 'all'}
+      .cat-office.round-button{title: 'Office', 'data-val' => 'office'}
+      .cat-hardware.round-button{title: 'Hardware', 'data-val' => 'hardware'}
+      .cat-software.round-button{title: 'Software', 'data-val' => 'software'}
+      .cat-equipment.round-button{title: 'Equipment', 'data-val' => 'equipment'}
+      .cat-food.round-button{title: 'Food', 'data-val' => 'food'}
 %section.promoted-list
 %section.rejected-list
 %section.completed-list
