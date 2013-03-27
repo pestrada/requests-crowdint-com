@@ -11,6 +11,7 @@ class App.Views.Request extends Backbone.View
     @renderComments()
     list = @$el.find('.comments-area ul')
     list.scrollTop list.prop('scrollHeight')
+    @.delegateEvents()
 
   show_comments: ()->
     @$el.find('.comments-area').toggleClass('hidden')
@@ -21,8 +22,12 @@ class App.Views.Request extends Backbone.View
 
   comment_on_click: (e)->
     e.preventDefault()
+    @.undelegateEvents()
     value = @$el.find('.new_comment').val()
-    @comment(value)
+    if value is ''
+      @.delegateEvents()
+    else
+      @comment(value)
 
   highlightRequest: ->
     if location.hash[1] == 'h' 
