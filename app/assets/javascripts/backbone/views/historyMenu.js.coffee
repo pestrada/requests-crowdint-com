@@ -46,6 +46,7 @@ class App.Views.HistoryMenu extends Backbone.View
         for request in data
           switch request.state
             when 'rejected' then rejected.push request
+            when 'timed_out' then rejected.push request
             when 'done' then completed.push request
             else  promoted.push request
         @resetHistoryLists(promoted, rejected, completed)
