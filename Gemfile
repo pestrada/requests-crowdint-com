@@ -25,6 +25,7 @@ gem 'acts_as_votable',
 
 gem 'pusher', "~> 0.11.3"
 gem 'pusher_rails'
+gem 'simplecov', :require => false, :group => :test
 gem 'unicorn'
 
 gem 'voting_app',
