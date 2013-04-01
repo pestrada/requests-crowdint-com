@@ -23,6 +23,7 @@ class App.Views.Request extends Backbone.View
 
   comment_on_click: (e)->
     e.preventDefault()
+    @$el.find('.add_comment').css('background-color', '#D8D8D8')
     @.undelegateEvents()
     value = @$el.find('.new_comment').val()
     if value is ''
