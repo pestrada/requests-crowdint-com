@@ -30,10 +30,12 @@ bundle exec rake db:test:prepare --trace > $LOG_DIR/rake_prepare.log 2>&1
 
 
 echo -e "\n*******************************************************"
-echo "-- Build project"
-bundle exec rake
+echo "-- Code Quality Tools"
 reek .
 rails_best_practices .
+echo -e "\n*******************************************************"
+echo "-- Build project"
+bundle exec rake
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -eq "0" ]; then
