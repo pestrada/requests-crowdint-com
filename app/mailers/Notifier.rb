@@ -21,7 +21,7 @@ class Notifier < ActionMailer::Base
 
   def request_completed(request)
     @request = request
-    mail(subject: "#{request.name}'s request has been promoted")
+    mail(subject: "#{request.name}'s request has been completed")
   end
 
   def request_rejected(request)
