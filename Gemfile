@@ -45,6 +45,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'json_spec'
   gem 'pry'
+  gem 'triggerino'
 end
 
 group :production do
