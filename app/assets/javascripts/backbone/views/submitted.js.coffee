@@ -39,6 +39,7 @@ class App.Views.Submitted extends App.Views.Request
     @can_vote = false
     @$el.find('.votes span:first-child').html(model.get('votes'))
     @$el.find('.like').removeClass('can-vote').addClass('cant-vote')
+    @updateSupportersTooltip()
 
   promoteRequest: ->
     @model.collection.remove(@model)
@@ -51,6 +52,14 @@ class App.Views.Submitted extends App.Views.Request
 
   do_nothing: (e)->
     e.preventDefault()
+
+  updateSupportersTooltip: ->
+    supporters = @$el.find('.supporters').html()
+    supporters = supporters.split('<br>')
+    supporters.push App.current_user
+    supporters = supporters.sort()
+    @$el.find('.votes').qtip("api").updateContent(supporters.join('<br>'), true)
+
 
 
 
