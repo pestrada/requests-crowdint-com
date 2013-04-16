@@ -15,7 +15,7 @@ class App.Models.Request extends Backbone.Model
       url: "/api/requests/#{@id}/vote"
       success: (data, status, xhr)=>
         @set({ votes: data.votes })
-        @promote() if data.votes >= App.votesLimit
+        @trigger('promoted') if data.votes >= App.votesLimit
 
   comment: (comment)->
     $.ajax
@@ -25,13 +25,6 @@ class App.Models.Request extends Backbone.Model
       success: (data, status, xhr)=>
         @set('comments', data.comments)
         @trigger('commented')
-
-  promote: ->
-    $.ajax
-      type: 'POST'
-      url: "/api/requests/#{@id}/promote"
-      success: (data, status, xhr)=>
-        @trigger('promoted')
 
   accept: ->
     $.ajax

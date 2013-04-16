@@ -19,7 +19,6 @@ class SubmissionObserver < ActiveRecord::Observer
   end
 
   def notify_promoted(notification)
-    puts 'promoted'
     @notification = Notifier.request_promoted(notification.submission)
     @notification.deliver
   end
