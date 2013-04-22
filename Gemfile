@@ -10,7 +10,8 @@ end
 
 gem 'airbrake'
 gem 'celluloid'
-gem 'crowdint_auth'
+gem 'crowdint_auth', git: 'git://github.com/supherman/crowdint_auth.git',
+    branch: 'open_id_store'
 gem 'devise'
 gem 'haml_assets'
 gem 'haml-rails'
