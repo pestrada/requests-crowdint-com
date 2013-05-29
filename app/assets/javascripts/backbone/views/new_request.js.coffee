@@ -10,6 +10,7 @@ class App.Views.NewRequest extends Backbone.View
   render: ->
     $('header').append(@$el.html(@template))
     @createCategoriesDropdown()
+    $('#new_submission').focus()
 
   show: ->
     @$el.show()
