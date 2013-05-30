@@ -35,6 +35,9 @@ bundle exec rake db:migrate
 ### Environment variables for local development
 	export VOTES_LIMIT=10
 
+### Cucumber
+You need to have installed [PhantomJS](https://github.com/ariya/phantomjs) to run the tests using the Capybara Poltergeist driver.
+
 ### Run
 
 ```
