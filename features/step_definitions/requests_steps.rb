@@ -104,3 +104,7 @@ end
 When(/^I select a category$/) do
   page.execute_script("$('#demo-htmlselect').data('ddslick').selectedData.value = 'office'")
 end
+
+Then(/^I should see the error "(.*?)"$/) do |text|
+  page.should have_content text
+end
