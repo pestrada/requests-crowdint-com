@@ -30,14 +30,14 @@ class App.Views.NewRequest extends Backbone.View
     @.undelegateEvents()
     category = $("#demo-htmlselect").data('ddslick').selectedData.value
     if category == '0'
-      @showMessage('Error', 'Select a Category', 'error')
+      @showMessage('Error', 'Please select a category for your request', 'error')
       @.delegateEvents()
     else
       textarea = @$el.find('#new_submission')
       description = textarea.val()
       request = new App.Models.Request({ description: _.str.rtrim(description), category: category })
       request.on 'invalid', =>
-        @showMessage('Error', 'Request should be > 0 < 140 chars', 'error')
+        @showMessage('Error', 'Please write a description for your request', 'error')
         @.delegateEvents()
       request.save {},
         success: =>
